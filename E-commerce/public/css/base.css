@@ -1,13 +1,14 @@
+/* header */
 *{
     padding:0;
     margin:0;
 }
 body{
-    width:1502.4px;
+    width:1500px;
     margin:0 auto;
 }
 #header.header_style{
-    width:1502.4px;
+    width:1500px;
     height:80px;
     margin:0 auto;
     background: #FAFAFA;
@@ -133,155 +134,178 @@ body{
     width:383px;
     height:70px;
 }
-#fashion{
-    background:#F4F3EA;
-    height: 663px;
+/* products */
+ul{
+    list-style: none;
 }
-.flex{
+.themeGreen,.themeWhite{
+    height:650px;
+}
+.themeGreen{
+    background:#F3F2E9;
+}
+.themeGreen>ul>li,.themeWhite>ul>li{
+    margin-bottom: 40px;
+    font-size:20px;
+    letter-spacing: 8px;
+}
+.themeGreen>ul>li>ul>li:last-child,.themeWhite>ul>li>ul>li:last-child{
+   font-size: 10px;
+   color:#A5A5A2;
+   letter-spacing: 5px;
+}
+.themeGreen>ul>li:last-child>a,.themeWhite>ul>li:last-child>a{
+    letter-spacing: 2px;
+    color:#000;
+    text-decoration: none;
+    border-radius: 30px;
+    background:#fff;
+    display: inline-block;
+    width:150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+    left:30px;
+    font-weight: bold;
+}
+.themeWhite>ul>li:last-child>a{
+    border:2px #EBEBEB solid;
+}
+.themeGreen>ul>li:last-child>a:hover{
+    color:#fff;
+    background:#EC3A5E;
+}
+.themeWhite>ul>li:last-child>a:hover{
+    color:#fff;
+    background: #000;
+}
+.themeGreen>ul>li:first-child,.themeWhite>ul>li:first-child{
     display: flex;
 }
-#fashion .left_info{
-    width:1000px;
+.themreGreen>ul>li:first-child>li{
+    font-size: 25px;
 }
-#fashion>ul.m{
-  margin-top:100px;
-  margin-left:100px;
+#fashion>div>div:first-child>img:first-child{
+    bottom:20px;
+    right:33px;
 }
-#fashion>div:last-child>div:first-child>img:first-child{
-    bottom:3px;
-    left:385px;
+#fashion>div>div:first-child>img:last-child{
+    bottom:248px;
+    left:87px;
 }
-#fashion>div:last-child>div:first-child>img:last-child{
-    bottom:233px;
-    left:501px;
+#fashion>div>div:last-child>img:last-child{
+    bottom:146px;
+    left:124px;
 }
-#fashion>div:last-child>div:last-child>img:first-child{
-    bottom:27px;
-    left:48px;
+#fashion>div{
+   right:-27px;
 }
-#fashion>div:last-child>div:last-child>img:last-child{
-    bottom:165px;
-    left:110px;
+#furniture>div>div:first-child>img:first-child{
+    bottom:20px;
+    left:20px;
 }
-.vertic_align_center{
-    vertical-align: middle;
+#furniture>div>div:first-child>img:nth-child(2){
+    bottom:203px;
+    left:10px;
 }
-.mt-50{
-    margin:100px;
+#furniture>div>div:first-child>img:last-child{
+    bottom:395px;
+    left:63px;
 }
-#fashion>ul>li .btn,#furniture>ul>li .btn,#devices>ul>li .btn{
-    background:#ffffff;    
-    color:#000000;
-    border: 1px transparent solid;
-    width:128px;
-    font-weight: bold;
-    left:40px;
+#furniture>div>div:last-child>img:first-child{
+    bottom:36px;
+    right:172px;
+}
+#furniture>div>div:last-child>img:nth-child(2){
+    bottom:251px;
+    right:40px;
+}
+#furniture>div>div:last-child>img:last-child{
+    bottom:472px;
+    left:89px;
+}
+#furniture>div{
+    top:-62px;
 }
 #furniture{
-    height:720px;
+    height: 727px;
 }
-#furniture>ul>li .btn{
-    border: 1px #EBEBEB solid;
-    text-align: center
+#electronics{
+    height:769px;
 }
-#fashion>ul>li .btn:hover,#devices>ul>li .btn:hover{
-    background:#EC3A5E;
-    color:#ffffff;
+#electronics>div{
+    top:-75px;
+    right:83px;
 }
-#furniture>ul>li .btn:hover{
-    background:#000;
-    color:#ffffff;
+#electronics>div>div:first-child>img:first-child{
+    bottom:-6px;
+    left:-24px;
 }
-#fashion>ul{
-    width:270px;
-    top:200px;
-    left:153px;
-    font-size:20px;
+#electronics>div>div:first-child>img:last-child{
+    bottom:212px;
+    left:92px;
 }
-#fashion>ul>li{
-    margin-bottom:43px;
+#electronics>div>div:last-child>img:last-child{
+    bottom:200px;
+    left:116px;
 }
-#fashion>ul>li:first-child{
-    text-align: left;
+#car>div{
+    top:-48px;
+    left:2px;
 }
-.mt_0{
-    margin-top:0;
+#car>div>div:first-child>img:last-child{
+    bottom:156px;
+    left:10px;
 }
-#fashion>ul p{
-    font-size:10px;
-    right:5px;
-    color:#A09F9D;
+#car>div>div:last-child>img:first-child{
+    bottom:76px;
+    right:277px;
 }
-#furniture>ul{
-    width:510px;
-    height:388px;
-    top:135px;
-    right:-178px;
+#car>div>div:last-child>img:nth-child(2){
+    bottom:313px;
+    right:135px;
 }
-#furniture>div:first-child{
-    width:668px;
+#car>div>div:last-child>img:last-child{
+    bottom:527px;
+    right:22px;
 }
-#furniture>div:nth-child(2){
-    width:550px;
+#car>ul>li:nth-child(2){
+    position: relative;
+    left:61px;
 }
-#furniture>div:first-child>img:first-child{
-    bottom:90px;
+#goods>div{
+    top:-95px;
+    right:80px;
 }
-#furniture>div:first-child>img:nth-child(2){
-    bottom:274px;
-    right:13px;
+#goods>div>div:first-child>img:first-child{
+    right:42px;
+    bottom:8px;
 }
-#furniture>div:first-child>img:last-child{
-    left:40px;
-    bottom:469px;
+#goods>div>div:first-child>img:last-child{
+    right:-97px;
+    bottom:207px;
 }
-#furniture>div:nth-child(2)>img:first-child{
-    bottom:90px;
-    right:348px;
+#goods>div>div:last-child>img:last-child{
+    left:222px;
+    bottom:166px;
 }
-#furniture>div:nth-child(2)>img:nth-child(2){
-    bottom:306px;
-    right:221px;
+#underwear{
+    height:749px;
 }
-#furniture>div:nth-child(2)>img:last-child{
-    bottom:526px;
-    right:93px;
+#underwear>div{
+    top:-19px;
+    left:-13px;
 }
-.font_20{
-    font-size:20px;
+#underwear>div>div:first-child>img:last-child{
+    bottom:149px;
+    right:10px;
 }
-.color_grey{
-    color:#A09F9D;
+#underwear>div>div:last-child>img:first-child{
+    top:15px;
+    right:191px;
 }
-.font_10{
-    font-size: 10px;
-}
-.mb_40{
-    margin-bottom:40px;
-}
-.background_lightgreen{
-    background:#F4F3EA;
-}
-#devices{
-    height:750px;
-}
-#devices>div:nth-child(2),#devices>div:last-child{
-    width:650px;
-    left:234px;
-    bottom:58px;
-}
-#devices>div:nth-child(2)>img:first-child{
-    left:141px;
-}
-#devices>div:nth-child(2)>img:last-child{
-    left:258px;
-    bottom:217px;
-}
-#devices>div:last-child>img:last-child{
-    bottom:194px;
-    left:59px;
-}
-#devices>ul{
-    top:225px;
-    left:107px;
+#underwear>div>div:last-child>img:last-child{
+    bottom:191px;
+    right:69px;
 }
