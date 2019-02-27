@@ -274,6 +274,13 @@ ul{
     position: relative;
     left:61px;
 }
+#car>div>div:first-child{
+    top:205px;
+}
+#car>div>div:last-child{
+    top:16px;
+    right: 112px;
+}
 #goods>div{
     top:-95px;
     right:80px;
@@ -297,9 +304,13 @@ ul{
     top:-19px;
     left:-13px;
 }
+#underwear>div>div:first-child>img:first-child{
+    top:222px;
+    right:-10px;
+}
 #underwear>div>div:first-child>img:last-child{
-    bottom:149px;
-    right:10px;
+    top:72px;
+    right:-8px;
 }
 #underwear>div>div:last-child>img:first-child{
     top:15px;
@@ -308,4 +319,130 @@ ul{
 #underwear>div>div:last-child>img:last-child{
     bottom:191px;
     right:69px;
+}
+#underwear>div>div:last-child{
+    right:183px;
+    bottom:83px;
+}
+#jewelry>div{
+    top:-189px;
+    right:179px;
+}
+#jewelry>div>div:first-child>{
+   left:10px;
+}
+#jewelry>div>div:first-child>img:first-child{
+    right:81px;
+    top:25px;
+}
+#jewelry>div>div:first-child>img:last-child{
+    left:150px;
+    bottom:218px;
+}
+#jewelry>div>div:last-child>img:last-child{
+    left:69px;
+    bottom:199px;
+}
+#bike>div>div:first-child>img:nth-child(2){
+    bottom:170px;
+    left:-12px;
+}
+#bike>div>div:first-child>img:last-child{
+    bottom:353px;
+    left:48px;
+}
+#bike>div>div:last-child>img:last-child{
+    bottom:197px;
+    left:288px;
+}
+#bike>div>div:first-child{
+    top:-71px;
+    left:10px;
+}
+#bike>div>div:last-child{
+    top:-39px;
+    right:183px;
+}
+#bike{
+    height: 768px;
+}
+#kids>div>div:first-child>img:last-child{
+    bottom:203px;
+    left:134px;
+}
+#kids>div>div:last-child>img:last-child{
+    bottom:120px;
+    left:225px;
+}
+#kids>div>div:last-child{
+    left:42px;
+    top:0px;
+}
+#kids>div{
+    top:-49px;
+    left:389px;
+}
+#kids{
+    height:740px;
+}
+#cosmetic>div>div:first-child>img:last-child{
+    bottom:165px;
+    right:-4px;
+}
+#cosmetic>div>div:last-child>img:nth-child(2){
+    bottom:170px;
+    left:127px;
+}
+#cosmetic>div>div:last-child>img:last-child{
+    bottom:366px;
+    left:251px;
+}
+#cosmetic>div>div:last-child{
+    top:44px;
+   right: 172px;
+}
+#cosmetic{
+    height:835px;
+}
+#pet>div>div:first-child>img:last-child{
+    top:94px;
+    left:509px;
+}
+#pet>div>div:last-child>img:last-child{
+    bottom:469px;
+    left:549px;
+}
+#pet>div>div:last-child{
+    top:477px;
+    right: 93px;
+}
+#pet>div{
+    bottom:109px;
+    left:67px;
+}
+#pet{
+    height:700px;
+}
+#tool>div>div:first-child>img:last-child{
+    bottom:205px;
+    right:-76px;
+}
+#tool>div>div:first-child>img:nth-child(2){
+    bottom:89px;
+    left:-3px;
+}
+#tool>div>div:last-child>img:last-child{
+    bottom:201px;
+    left:247px;
+}
+#tool>div>div:last-child>img:first-child{
+    bottom:80px;
+    left:-14px;
+}
+#tool>div>div:last-child{
+    top:44px;
+   right: 172px;
+}
+#tool{
+    height:835px;
 }
