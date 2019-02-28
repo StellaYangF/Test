@@ -21,40 +21,55 @@ body {
 .display_none {
     display: none;
 }
-
-#header>ul {
-    background: #fff;
+.bg_b{
+    background: #2F2C2F;
+    color:#fff;
 }
 
 #header.header_style {
     width: 1500px;
-    height: 80px;
+    height: 70px;
     margin: 0 auto;
     background: #FAFAFA;
 }
 
-#header.header_style ul,
-#fashion>ul {
+#navs, #fashion>ul {
     list-style-type: none;
     width: 1502.4px;
-    height: 80px;
+    height: 70px;
 }
 
-#header.header_style ul:after {
+#navs:after {
     content: "";
     display: block;
     clear: both;
 }
 
-#header.header_style ul li {
+#navs li>a{
     width: 125px;
-    height: 80px;
+    height: 70px;
     border: 0.1px solid #ccc;
-    box-sizing: content-box;
     float: left;
-    line-height: 80px;
+    line-height: 70px;
     text-align: center;
     font-weight: bold;
+}
+
+#navs>li>a{
+    border-left: 0;
+    border-bottom: 0;
+}
+
+#navs li:first-child>a {
+    border-left: 0.1px solid #ccc;
+}
+
+#navPics {
+    width: 1500px;
+    height: 300px;
+    background: #2F2C2F;
+    top: 78px;
+    z-index: 100
 }
 
 #content.content_style {
@@ -177,15 +192,13 @@ body {
     height: 70px;
 }
 
-
 /* products */
 
 ul {
     list-style: none;
 }
 
-.themeGreen,
-.themeWhite {
+.themeGreen, .themeWhite {
     height: 650px;
 }
 
@@ -193,22 +206,19 @@ ul {
     background: #F3F2E9;
 }
 
-.themeGreen>ul>li,
-.themeWhite>ul>li {
+.themeGreen>ul>li, .themeWhite>ul>li {
     margin-bottom: 40px;
     font-size: 20px;
     letter-spacing: 8px;
 }
 
-.themeGreen>ul>li>ul>li:last-child,
-.themeWhite>ul>li>ul>li:last-child {
+.themeGreen>ul>li>ul>li:last-child, .themeWhite>ul>li>ul>li:last-child {
     font-size: 10px;
     color: #A5A5A2;
     letter-spacing: 5px;
 }
 
-.themeGreen>ul>li:last-child>a,
-.themeWhite>ul>li:last-child>a {
+.themeGreen>ul>li:last-child>a, .themeWhite>ul>li:last-child>a {
     letter-spacing: 2px;
     color: #000;
     text-decoration: none;
@@ -239,8 +249,7 @@ ul {
     background: #000;
 }
 
-.themeGreen>ul>li:first-child,
-.themeWhite>ul>li:first-child {
+.themeGreen>ul>li:first-child, .themeWhite>ul>li:first-child {
     display: flex;
 }
 

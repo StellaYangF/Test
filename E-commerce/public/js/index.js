@@ -1,4 +1,4 @@
-(function() {
+(function () {
     $(".themeGreen")
         .css({ width: "1500px", position: "relative" })
         .children("ul")
@@ -23,30 +23,23 @@
         .css({ position: "relative" });
     // navs悬停设置
     var $ul = $("#header>ul");
-    $ul.on("mouseenter", "li", function() {
-            $(this).css({
-                    cursor: "pointer",
-                    background: "#2F2C2F",
-                    color: "#fff"
-                })
-                .children("a")
-                .css({ color: "#fff" })
-            $("#navPics")
-                .css({ width: "1500px", height: "300px", background: "#2F2C2F", top: "80px", zIndex: 100 })
-                .addClass("position_fixed margin_auto")
-                .removeClass("display_none")
-        })
-        .on("mouseleave", "li", function() {
-            $(this).css({
-                    background: "#fff",
-                    color: "#000"
-                })
+    $ul.on("mouseenter", "li", function () {
+        $(this)
+            .find("a")
+            .css({ background: "#2F2C2F", color: "#fff" })
+            .after(` <ul id="navPics" class="position_fixed margin_auto"></ul>`)
+            .removeClass("display_none")
+            .animate({
+                top: 70     
+            }, 70)
+    })
+        .on("mouseleave", "li", function () {
+            $(this)
+            .find("a")
+            .css({background: "#fff",color: "#000"})
                 .children("a")
                 .css({ color: "#000" })
-            $("#navPics")
-                .mouseleave(function() {
-                    $(this)
-                        .addClass("display_none")
-                })
+           $("#navPics")
+                .remove();
         })
 })()
