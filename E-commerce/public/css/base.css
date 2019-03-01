@@ -26,17 +26,19 @@ body {
     color:#fff;
 }
 
-#header.header_style {
+#header {
     width: 1500px;
-    height: 70px;
+    height: 50px;
     margin: 0 auto;
     background: #FAFAFA;
+    z-index: 200;
+    box-shadow: 0 0.1px 20px 1px #E2E1D9;
 }
 
 #navs, #fashion>ul {
     list-style-type: none;
     width: 1502.4px;
-    height: 70px;
+    height: 50px;
 }
 
 #navs:after {
@@ -47,10 +49,10 @@ body {
 
 #navs li>a{
     width: 125px;
-    height: 70px;
+    height: 50px;
     border: 0.1px solid #ccc;
     float: left;
-    line-height: 70px;
+    line-height: 50px;
     text-align: center;
     font-weight: bold;
 }
@@ -68,19 +70,20 @@ body {
     width: 1500px;
     height: 300px;
     background: #2F2C2F;
-    top: 78px;
+    top: 60px;
     z-index: 100
 }
 
-#content.content_style {
+#content{
     margin: 0 auto;
     width: 1502.4px;
     height: 750px;
     background: url(../img/home/main-slider.jpg) no-repeat;
     background-size: 1502.4px;
+    margin-top:50px;
 }
 
-#content.content_style>ul {
+#content>ul {
     width: 300px;
     margin-left: 246px;
     margin-top: 215px;
@@ -112,14 +115,17 @@ body {
     border-radius: 30px;
 }
 
-.link_style_none.display_block.rounded {
+.btn_pink {
     padding: 15px 25px;
     border: 2px solid #EC3A5E;
     background: #EC3A5E;
     color: #fff;
+    display: block;
+    border-radius: 30px;
+    text-decoration: none;
 }
 
-.link_style_none.display_block.rounded:hover {
+.btn_pink_hover:hover {
     color: #EC3A5E;
     background: rgb(255, 255, 255, 0);
 }
@@ -583,4 +589,60 @@ ul {
 
 #tool {
     height: 835px;
+    border-bottom: 1px solid #E7E7E7;
+}
+#advantage,#tip{
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom:50px;
+}
+#advantage>div,#new>div,#tip>div{
+   display: flex;
+   justify-content: space-around;
+}
+#advantage>div>ul{
+    width:600px;
+    margin-top:50px;
+}
+#new{
+    border-top:1px solid #E7E7E7;
+    border-bottom: 1px solid #E7E7E7;
+    background:#FCFCF9;
+    padding-top:50px;padding-bottom:50px;
+}
+
+#new>div>ul>li{
+    width:700px;
+}
+
+#new>div>ul>li:last-child{
+    margin-top:20px;
+}
+#tip>div>ul{
+    width:300px;
+    height:230px;
+    margin-top:30px;
+    text-align: left;
+}
+#tip>div>ul>li:first-child{
+    margin-bottom: 20px;
+}
+#tip>div:last-child{
+    justify-content: flex-start;
+    padding-left:32px;
+}
+#tip>div:last-child>ul:last-child{
+   margin-left: 77px;
+}
+footer{
+    background:#F4F3EA;
+    text-align: center;
+    padding-top:50px;
+}
+footer>ul>li{
+    margin-top:50px;
+}
+footer>ul>li>a{
+    width:300px;
+    margin:20px auto;
 }

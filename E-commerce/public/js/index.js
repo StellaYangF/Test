@@ -28,10 +28,11 @@
             .find("a")
             .css({ background: "#2F2C2F", color: "#fff" })
             .after(` <ul id="navPics" class="position_fixed margin_auto"></ul>`)
+            .next()
             .removeClass("display_none")
             .animate({
-                top: 70     
-            }, 70)
+                top: 50     
+            }, 300)
     })
         .on("mouseleave", "li", function () {
             $(this)
