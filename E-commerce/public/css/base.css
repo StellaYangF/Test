@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
 }
 
-.position_fixed {
+.fixed {
     position: fixed;
 }
 
@@ -106,7 +106,6 @@ body {
     height: 750px;
     background: url(../img/home/main-slider.jpg) no-repeat;
     background-size: 1502.4px;
-    margin-top: 50px;
 }
 
 #content>ul {
