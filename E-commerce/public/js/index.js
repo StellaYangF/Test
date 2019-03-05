@@ -78,15 +78,20 @@
     }, 3000)
 
     /*navs fiexed*/
+    /*******not completed*******/ 
     $header = $("#header");
     var navOffset = $header.offset().top;
     $(window).scroll(function () {
         var scrollPos = $(window).scrollTop();
-        if (scrollPos >= navOffset) {
+        if (scrollPos >=navOffset) {
             $header
-            .addClass("fixed")
-        } else {
-            $header.removeClass("fixed")
+            .fadeIn(400,function(){
+                $(this).addClass("fixed")
+            })
+        }else{
+            $header
+            .fadeOut(400)
+            .removeClass("fixed")
         }
     })
 })()
