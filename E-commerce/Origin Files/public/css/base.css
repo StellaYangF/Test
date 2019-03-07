@@ -1,0 +1,24 @@
+/* header */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 1500px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color:#767676;
+}
+ul{
+    list-style: none;
+}
+.flex{
+    display: flex;
+}
+.floatF{
+    float:left;
+}
