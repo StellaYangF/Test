@@ -32,7 +32,23 @@ Vue.component(Button.name,Button)
 Vue.component(Tabbar.name,Tabbar)
 Vue.component(Swipe.name,Swipe)
 Vue.component(SwipeItem.name,SwipeItem)
+
 new Vue({
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
+
+// filters
+Vue.filter("dateFilter",function(val){
+  var now=new Date(val),
+  y=now.getFullYear(),
+  m=now.getMonth()+1,
+  d=now.getDate(),
+  h=now.getHours(),
+  mi=now.getMinutes(),
+  s=now.getSeconds();
+  // 巧用逻辑短路来判断赋值未满两位数的月份和日期
+  m<10&&(m="0"+m);
+  d<10&&(d="0"+d);
+  return (`${y}-${m}-${d} ${h}:${mi}:${s}`)
+})

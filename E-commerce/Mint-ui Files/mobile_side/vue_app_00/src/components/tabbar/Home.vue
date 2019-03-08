@@ -11,10 +11,10 @@
     <!--  grid-->
     <ul class="mui-table-view mui-grid-view mui-grid-9 grid-list">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" v-for="grid of gridlist">
-        <a href="#">
+        <router-link :to="grid.path">
           <img :src="grid.img_url" :alt="grid.id" class="grid-img">
           <div class="mui-media-body">{{grid.title}}</div>
-        </a>
+        </router-link>
       </li>
     </ul>
     <!-- bottom navbar -->
