@@ -65,7 +65,7 @@
 
     /*carousel*/
     var i = 0;
-    var moved = -504.36;
+    var moved = -500;
     setInterval(function () {
         if (i < 11) {
             $(".carousel_img").css({
@@ -78,20 +78,21 @@
     }, 3000)
 
     /*navs fiexed*/
-    /*******not completed*******/ 
+    /*******not completed*******/
     $header = $("#header");
     var navOffset = $header.offset().top;
     $(window).scroll(function () {
         var scrollPos = $(window).scrollTop();
-        if (scrollPos >=navOffset) {
+        if (scrollPos >= navOffset) {
             $header
-            .fadeIn(400,function(){
-                $(this).addClass("fixed")
-            })
-        }else{
+                .fadeIn(400, function () {
+                    $(this).addClass("fixed")
+                })
+        } else {
             $header
-            .fadeOut(400)
-            .removeClass("fixed")
+                .fadeOut(400)
+                .removeClass("fixed")
         }
     })
+
 })()

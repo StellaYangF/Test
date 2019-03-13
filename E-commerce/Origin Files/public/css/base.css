@@ -22,3 +22,6 @@ ul{
 .floatF{
     float:left;
 }
+.word_spacing {
+    letter-spacing: 10px;
+}

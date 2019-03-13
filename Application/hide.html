@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Music recommendation</h1>
+    <input type="month">
+    <p class="soft time bg_class">Soft</p>
+    <p>Pop</p>
+    <script src="../Funtion library/hide.js"></script>
+    <script>
+        var p=document.getElementsByClassName("soft")[0];
+        console.log(p.classList);
+        // p.classList查询元素的class属性列表以数组形式存在的下标+长度+值value
+        console.log(p);
+        p.onclick=hide(this);
+    </script>
+</body>
+</html>

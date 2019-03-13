@@ -12,35 +12,49 @@
     <title>时尚服饰</title>
 </head>
 
+
 <body>
     <!-- top navbar -->
-    <header id="header" class="flex">
-        <div>
-            <a href="javascript:;" class="flex">
+    <header id="header">
+        <div class="header_logo">
+            <a href="javascript:;" class="flex header_logo_content">
                 <img src="img/logo/logo-1.png" alt="logo-1">
-                <div>
-                    <h3>电商之家</h5>
+                <div class="header_logo_inner_content">
+                    <h3 class="word_spacing">电商之家</h5>
                         <p>时尚服饰</p>
                 </div>
             </a>
         </div>
-        <div>
-            <ul class="flex">
-                <li><a href="javascript:;">女士专区</a></li>
-                <li><a href="javascript:;">男士专区</a></li>
-                <li><a href="javascript:;">青年专区</a></li>
-                <li><a href="javascript:;">儿童专区</a></li>
-                <li><a href="javascript:;">潮牌穿搭</a></li>
-            </ul>
-        </div>
-        <div>
-            <ul class="flex">
-                <li><a id="icon-person"><span class="mui-icon mui-icon-person"></span></a></li>
-                <li><a><span class="mui-icon mui-icon-search"></span></a></li>
-                <li><a><span class="mui-icon mui-icon-extra mui-icon-extra-heart"></span></a></li>
-                <li><a><span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span></a></li>
-            </ul>
-        </div>
+        <ul class="navbar">
+            <li class="navbar_item">
+                <a href="javascript:;" class="navbar_item_link ">女士专区<span class="row_down">></span></a>
+                <div class="collapse fashion_card_head">
+                    <div class="fashion_card_content">
+                        <ul>
+                            <li class="fashion_card_inner_header"><a href="javascript:;" class="fashion_card_content_link">潮服</a> </li>
+                        </ul>
+                        <ul>
+                            <li class="fashion_card_inner_header"><a href="javascript:;" class="fashion_card_content_link">潮鞋</a></li>
+                        </ul>
+                        <ul>
+                            <li class="fashion_card_inner_header"><a href="javascript:;" class="fashion_card_content_link">搭配单品</a></li>
+                        </ul>
+                    </div>
+                    <div class="fashion_img_content"></div>
+                </div>
+            </li>
+            <li class="navbar_item"><a href="javascript:;" class="navbar_item_link">男士专区<span
+                        class="row_down">></span></a></li>
+            <li class="navbar_item"><a href="javascript:;" class="navbar_item_link">青年专区</a></li>
+            <li class="navbar_item"><a href="javascript:;" class="navbar_item_link">儿童专区</a></li>
+            <li class="navbar_item"><a href="javascript:;" class="navbar_item_link">潮牌穿搭</a></li>
+        </ul>
+        <ul class="u_info">
+            <li><a href="javascript:;" id="icon-person"><span class="mui-icon mui-icon-person"></span></a></li>
+            <li><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a></li>
+            <li><a href="javascript:;"><span class="mui-icon mui-icon-extra mui-icon-extra-heart"></span></a></li>
+            <li><a href="javascript:;"><span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span></a></li>
+        </ul>
     </header>
     <!-- carousel slide -->
     <section class="carousel">
@@ -77,7 +91,7 @@
         </div>
         <ul class="flex">
             <li>
-            <img src="img/fashion/fashion_home/lookbook1_1.jpg" alt="lookbook1_1"></li>
+                <img src="img/fashion/fashion_home/lookbook1_1.jpg" alt="lookbook1_1"></li>
             <li><img src="img/fashion/fashion_home/lookbook1_2.jpg" alt="lookbook1_2"></li>
             <li><img src="img/fashion/fashion_home/lookbook1_3.jpg" alt="lookbook1_3"></li>
             <li><img src="img/fashion/fashion_home/lookbook1_4.jpg" alt="lookbook1_4"></li>

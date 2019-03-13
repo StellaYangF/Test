@@ -162,8 +162,9 @@
 }
 
 .carousel_img {
-    width: 5548px;
+    width: 5500px;
     height: 359px;
+    display: flex;
 }
 
 .position_relative {
