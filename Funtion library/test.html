@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="color_random.js"></script>
+    <script src="hide.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        // color random
+        div.style.background = colorRdm();
+        div.style.border = "1px solid #f00";
+        // here div is not an object and can't .prototype to extend hide;
+        div.onclick=()=>{
+            hide(div,true);
+        };
+    </script>
+</body>
+
+</html>
