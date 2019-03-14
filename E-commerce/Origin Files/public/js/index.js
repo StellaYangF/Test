@@ -1,4 +1,4 @@
-(function () {
+(() => {
     $(".themeGreen")
         .css({ width: "1500px", position: "relative" })
         .children("ul")
@@ -23,39 +23,40 @@
         .css({ position: "relative" });
     // navs悬停设置
     var $ul = $("#header>ul");
-    $ul.on("mouseenter", "li.tab", function () {
-        var a = $(this)
-            .find("a");
-        var data1 = a.attr("data1"),
-            data2 = a.attr("data2"),
-            data3 = a.attr("data3"),
-            data4 = a.attr("data4");
-        a.css({ background: "#2F2C2F", color: "#fff" })
-            .after(` <ul id="navPics" class="fixed margin_auto">
+    $ul.on("mouseenter", "li.tab", function() {
+            var a = $(this)
+                .find("a");
+            var data1 = a.attr("data1"),
+                data2 = a.attr("data2"),
+                data3 = a.attr("data3"),
+                data4 = a.attr("data4");
+            // Change navPics picture:
+            a.css({ background: "#2F2C2F", color: "#fff" })
+                .after(` <ul id="navPics" class="fixed margin_auto">
             <li><a href="javascript:;"><div class="hoax"><img src="${data1}" alt="1"></div></a></li>
             <li><a href="javascript:;"><div class="hoax"><img src="${data2}" alt="2"></div></a></li>
             <li><a href="javascript:;"><div class="hoax"><img src="${data3}" alt="3"></div></a></li>
             <li><a href="javascript:;"><div class="hoax"><img src="${data4}" alt="4"></div></a></li>
         </ul>`)
-            .next()
-            .animate({
-                top: 50
-            }, 300);
-        /*导航栏悬停内部的图片蒙层*/
-        $(".hoax").hover(
-            function (e) {
-                $(e.target).animate({
-                    opacity: 0.7,
-                }, 200)
-            },
-            function (e) {
-                $(e.target).animate({
-                    opacity: 1
-                }, 200)
-            }
-        )
-    })
-        .on("mouseleave", "li.tab", function () {
+                .next()
+                .animate({
+                    top: 50
+                }, 300);
+            /*navbar pic shadow*/
+            $(".hoax").hover(
+                (e) => {
+                    $(e.target).animate({
+                        opacity: 0.7,
+                    }, 200)
+                },
+                (e) => {
+                    $(e.target).animate({
+                        opacity: 1
+                    }, 200)
+                }
+            )
+        })
+        .on("mouseleave", "li.tab", function() {
             $(this)
                 .find("a")
                 .css({ background: "#fff", color: "#000" });
@@ -66,7 +67,7 @@
     /*carousel*/
     var i = 0;
     var moved = -500;
-    setInterval(function () {
+    setInterval(() => {
         if (i < 11) {
             $(".carousel_img").css({
                 marginLeft: `${moved * i}px`
@@ -81,11 +82,11 @@
     /*******not completed*******/
     $header = $("#header");
     var navOffset = $header.offset().top;
-    $(window).scroll(function () {
+    $(window).scroll(() => {
         var scrollPos = $(window).scrollTop();
         if (scrollPos >= navOffset) {
             $header
-                .fadeIn(400, function () {
+                .fadeIn(400, () => {
                     $(this).addClass("fixed")
                 })
         } else {
