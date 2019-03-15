@@ -29,12 +29,12 @@
         var moved = 0;
         size = iWidth.replace("px", "");
         setInterval(() => {
-            var marginLeft = `-${moved * size}px`;
+            var marginLeft = `-${moved*size}px`;
             if (moved < count) {
                 $(".carousel_group")
-                    .animate({
+                    .css({
                         marginLeft,
-                    }, 300);
+                    });
                 moved++;
             } else {
                 moved = 0;
@@ -43,14 +43,6 @@
     };
     /*window load finished then invoke the slide()*/
     $(window).load(() => {
-        slide(5000);
-    });
-
-    /*navbar_item hover*/
-    $('.list1').hover(function(){
-        $('.fashion_women').toggleClass('collapse')
-    });
-    $('.list2').hover(function(){
-        $('.fashion_men').toggleClass('collapse')
+        slide(4000);
     });
 })();
