@@ -33,24 +33,28 @@
             if (moved < count) {
                 $(".carousel_group")
                     .animate({
-                        marginLeft,
+                        marginLeft
                     }, 300);
                 moved++;
             } else {
+                $(".carousel_group")
+                    .animate({
+                        marginLeft: 0
+                    }, 0);
                 moved = 0;
             }
         }, time)
     };
     /*window load finished then invoke the slide()*/
     $(window).load(() => {
-        slide(5000);
+        slide(2000);
     });
 
     /*navbar_item hover*/
-    $('.list1').hover(function(){
+    $('.list1').hover(function() {
         $('.fashion_women').toggleClass('collapse')
     });
-    $('.list2').hover(function(){
+    $('.list2').hover(function() {
         $('.fashion_men').toggleClass('collapse')
     });
 })();

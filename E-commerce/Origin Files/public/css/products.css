@@ -156,3 +156,7 @@
     margin-left: 215px;
     padding-bottom: 5px;
 }
+
+.carousel_item img {
+    width: 1500px;
+}
