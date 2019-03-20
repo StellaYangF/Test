@@ -79,14 +79,14 @@
     $('.list3')
         .mouseenter(() => {
             $(".arrowR").css({
-                transform: "translate(5px)",
+                marginLeft: "154px",
                 color: "#BABABA"
             })
             $('.card_link_nav').removeClass('collapse');
         })
         .mouseleave(() => {
-            $(".arrow2").css({
-                transform: "translate(0px)",
+            $(".arrowR").css({
+                marginLeft: "150px",
                 color: "#767676"
             })
             $('.card_link_nav').addClass('collapse');
