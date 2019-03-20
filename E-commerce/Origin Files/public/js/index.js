@@ -80,20 +80,20 @@
 
     /*navs fiexed*/
     /*******not completed*******/
-    $header = $("#header");
-    var navOffset = $header.offset().top;
-    $(window).scroll(() => {
-        var scrollPos = $(window).scrollTop();
-        if (scrollPos >= navOffset) {
-            $header
-                .fadeIn(400, () => {
-                    $(this).addClass("fixed")
-                })
-        } else {
-            $header
-                .fadeOut(400)
-                .removeClass("fixed")
-        }
-    })
+    // $header = $("#header");
+    // var navOffset = $header.offset().top;
+    // $(window).scroll(() => {
+    //     var scrollPos = $(window).scrollTop();
+    //     if (scrollPos >= navOffset) {
+    //         $header
+    //             .fadeIn(400, () => {
+    //                 $(this).addClass("fixed")
+    //             })
+    //     } else {
+    //         $header
+    //             .fadeOut(400)
+    //             .removeClass("fixed")
+    //     }
+    // })
 
 })()

@@ -26,7 +26,7 @@
         });
 
         /*carousel slide setting*/
-        var moved = 0;
+        var moved = 1;
         size = iWidth.replace("px", "");
         setInterval(() => {
             var marginLeft = `-${moved * size}px`;
@@ -38,9 +38,9 @@
                 moved++;
             } else {
                 $(".carousel_group")
-                    .animate({
+                    .css({
                         marginLeft: 0
-                    }, 0);
+                    });
                 moved = 0;
             }
         }, time)
@@ -51,10 +51,44 @@
     });
 
     /*navbar_item hover*/
-    $('.list1').hover(function() {
-        $('.fashion_women').toggleClass('collapse')
-    });
-    $('.list2').hover(function() {
-        $('.fashion_men').toggleClass('collapse')
-    });
+    $('.list1')
+        .mouseenter(() => {
+            $(".arrow1").css({
+                transform: "rotate(-90deg)"
+            })
+            $('.fashion_women').removeClass('collapse');
+        })
+        .mouseleave(() => {
+            $(".arrow1").css({
+                transform: "rotate(90deg)"
+            })
+            $('.fashion_women').addClass('collapse');
+        });
+    $('.list2').mouseenter(() => {
+            $(".arrow2").css({
+                transform: "rotate(-90deg)"
+            })
+            $('.fashion_men').removeClass('collapse');
+        })
+        .mouseleave(() => {
+            $(".arrow2").css({
+                transform: "rotate(90deg)"
+            })
+            $('.fashion_men').addClass('collapse');
+        });
+    $('.list3')
+        .mouseenter(() => {
+            $(".arrowR").css({
+                transform: "translate(5px)",
+                color: "#BABABA"
+            })
+            $('.card_link_nav').removeClass('collapse');
+        })
+        .mouseleave(() => {
+            $(".arrow2").css({
+                transform: "translate(0px)",
+                color: "#767676"
+            })
+            $('.card_link_nav').addClass('collapse');
+        });
 })();
