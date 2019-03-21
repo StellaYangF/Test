@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	 *{ margin: 0px;
+		 padding: 0px;
+		 }
+	li{ list-style: none;} 
+	.content{ width: 510px ;
+		 height:102px; 
+		 overflow: hidden; 
+		 border: #4e83c2 solid 1px;
+		 margin:50px auto;
+		 position: relative;
+		 }  
+	.content ul{ width: 510px;
+		 height:100px;}   
+	.content ul li{ float: left; 
+		 width: 100px; 
+		 height: 100px;
+		 border:#ccc solid 1px; 
+		 display: block;
+		}   
+			.left,.right{
+				position: absolute;
+				top:41px;
+				width:20px;
+				height:20px;
+				background: gray;
+				opacity: .5;
+				text-align: center;
+				line-height: 20px;
+			}
+			.left{left:0;}.right{right:0;}
+			.content .list{width: 1530px;}
+			img{
+				width:100px;
+				height:100px;
+			}
+			.content .list ul{float: left;}
+		 </style>	
+</head>
+<body>
+	<div class="content"> 
+		<span class='left'>&lt;</span>
+		<span class='right'>&gt;</span>
+	<ul class='list'>
+		<ul class="list1">
+	<li><img src="01.jpg" alt=""></li>  
+	<li><img src="01.jpg" alt=""></li>
+	<li><img src="01.jpg" alt=""></li> 
+	<li><img src="01.jpg" alt=""></li> 
+	<li><img src="01.jpg" alt=""></li> 
+		</ul>
+	    <ul class="list2">
+	<li><img src="02.jpg" alt=""></li> 
+	<li><img src="02.jpg" alt=""></li> 
+	<li><img src="02.jpg" alt=""></li> 
+	<li><img src="02.jpg" alt=""></li>  
+	<li><img src="02.jpg" alt=""></li> 
+	    </ul>
+		<ul class="list3">
+	<li><img src="03.jpg" alt=""></li> 
+	<li><img src="03.jpg" alt=""></li> 
+	<li><img src="03.jpg" alt=""></li> 
+	<li><img src="03.jpg" alt=""></li>  
+	<li><img src="03.jpg" alt=""></li> 
+	    </ul>
+	</ul> 
+	</div> 
+	<script src="jquery-3.2.1.js"></script>
+	<script>  
+	$('.right').click(()=>{
+		$(".list").animate({"margin-left":"-510px"},800,function(){
+			$(".list ul:eq(0)").appendTo($(".list")) 
+			$(".list").css({"margin-left":0}) 
+			})  
+	})
+	$('.left').click(()=>{
+		$(".list").prepend($(".list ul:eq(2)"))
+		.css({"margin-left":"-510px"})
+		.animate({"margin-left":"0px"},800);		
+	})
+	</script>
+</body>
+</html>

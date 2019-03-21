@@ -91,4 +91,5 @@
             })
             $('.card_link_nav').addClass('collapse');
         });
-})();
+})(); 
+
