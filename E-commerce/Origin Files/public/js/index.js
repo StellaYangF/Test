@@ -21,7 +21,8 @@
         .css({ width: "500px", position: "relative" })
         .children("img")
         .css({ position: "relative" });
-    // navs悬停设置
+
+    /*  navs hover setting*/
     var $ul = $("#header>ul");
     $ul.on("mouseenter", "li.tab", function() {
             var a = $(this)

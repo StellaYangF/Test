@@ -47,7 +47,7 @@
     };
     /*window load finished then invoke the slide()*/
     $(window).load(() => {
-        slide(2000);
+        slide(5000);
     });
 
     /*navbar_item hover*/

@@ -5,7 +5,7 @@
     z-index: 100;
 }
 
-#header, .first_floor, .z_floor, .second_floor,.module,.feater_content {
+#header, .first_floor, .z_floor, .second_floor,.module,.feater_content,video {
     width: 1500px;
 }
 
@@ -111,7 +111,7 @@
     color: rgba(0, 0, 0, 0.829);
 }
 
-.arrow, .arrowR, .btn {
+.arrow, .arrowR, .btn,.img_hover {
     transition: .5s all ease
 }
 
@@ -141,7 +141,7 @@
     width: 650px;
 }
 
-.fashion_img_content, .container,.img_content_bg,.feater_content {
+.fashion_img_content, .container,.img_content_bg,.feater_content,.img_content,.img_item>a {
     overflow: hidden;
 }
 
@@ -278,10 +278,18 @@
     border-right: 1px solid #ccc;
 }
 
-.first_floor {
+.first_floor,.img_content {
     height: 499px;
 }
-
+.img_1{
+    width:330px;
+}
+.img_2{
+    width:390px;
+}
+.img_3{
+    width:420px;
+}
 .ff_card {
     width: 360px;
     height: 100%;
@@ -402,4 +410,20 @@
 .feature_title>span{
     width:185px;
     border-bottom:5px solid rgb(203,170,149);
+}
+.img_hover:hover{
+    transform: scale(1.05);
+}
+.price{
+    font-size:26px;
+    color:#2F2C2F;
+}
+
+.pname{
+    font-size:20px;
+}
+.card_body{
+    width:450px;
+    height: 120px;
+    padding: 19px 0;
 }
