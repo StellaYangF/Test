@@ -1,0 +1,41 @@
+footer,.more_info,.copyRight{
+    width:1500px;
+}
+.more_info{
+    padding:20px;
+    margin-bottom:40px;
+}
+.more_info,.copyRight{
+    justify-content: space-between;
+}
+.more_info,.info_container,.copyRight{
+    display: flex;
+}
+.info_container{
+    flex-direction: column;
+}
+.info_title,.info_title_link{
+    color:#767676;
+    font-size:20px;
+}
+.info_item,.info_item_one{
+    margin-top:20px;
+}
+.info_item span:nth-child(2){
+    margin-left:15px;
+}
+.info_mail,.info_item span:nth-child(2),.info_title_link:hover{
+    color:#EA917D;
+}
+.info_item span:nth-child(2):hover,.info_item_one,.info_mail:hover,.copy{
+    color:#767676;
+}
+.arrowRight{
+    position: relative;
+    transition: .5s all ease;
+}
+.copyRight{
+    border-top:1px solid #EBEBEB;
+    height:100px;
+    align-items: center;
+}

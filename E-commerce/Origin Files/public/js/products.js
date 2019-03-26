@@ -91,5 +91,40 @@
             })
             $('.card_link_nav').addClass('collapse');
         });
+        /*** fifth floor card_container hover  ***/ 
+        $(".card_content.one")
+        .mouseenter(()=>{
+            $(".line.one").css({
+                width:"300px"
+            })
+        })
+        .mouseleave(()=>{
+            $(".line.one").css({
+                width:"500px"
+            })
+        });
+        $(".card_content.two")
+        .mouseenter(()=>{
+            $(".line.two").css({
+                width:"300px"
+            })
+        })
+        .mouseleave(()=>{
+            $(".line.two").css({
+                width:"500px"
+            })
+        });
+        /** import footer.html **/
+        $(function(){
+            $.ajax({
+                url:"footer.html",
+                type:"get",
+                success:(res)=>{
+                    console.log(res);
+                    $("footer")
+                    .html(res);
+                }
+            })
+        })
 })(); 
 
