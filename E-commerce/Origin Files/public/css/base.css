@@ -36,4 +36,10 @@ ul {
 .btn {
     box-shadow: 0 0.1875rem 1.8125rem 0 rgba(0, 0, 0, .09);
     border: none;
+    transition: .5s all ease;
+    text-align: center;
+    display: inline-block;
+}
+.collapse {
+    display: none;
 }
