@@ -1,5 +1,4 @@
 (()=>{
-    console.log($(".more_info"));
     $(".more_info")
     .on("mouseenter",".info_link",function(){
         console.log(1);

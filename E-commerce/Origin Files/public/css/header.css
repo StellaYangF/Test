@@ -1,11 +1,12 @@
-#header {
-    margin-top: 58px;
-    position: fixed;
+header {
+    padding-top: 32px;
+    position: absolute;
     background-color: transparent;
     z-index: 100;
+    transition: .5s all ease;
 }
 
-#header {
+header {
     width: 1500px;
 }
 
@@ -90,7 +91,8 @@ header, .navbar, .fashion_card_content, .u_info,.fashion_card_head {
     width: 650px;
 }
 .navbar_item>.fashion_card_head {
-    top: 65px;
+    margin-top:2px;
+    top: 67px;
     width: 1300px;
     height: 600px;
     left: -170px;
@@ -155,6 +157,15 @@ header, .navbar, .fashion_card_content, .u_info,.fashion_card_head {
 .collapse {
     display: none;
 }
-.fashion_link:hover{
+.fashion_link:hover,.u_info span:hover{
     color: #EC9D8B;
+}
+.fixed{
+    position: fixed;
+}
+.abst{
+    position:absolute;
+}
+.header_logo_content>img{
+    height:40px;
 }

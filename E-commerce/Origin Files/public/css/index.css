@@ -17,14 +17,14 @@
     color: #fff;
 }
 
-#header {
+header {
     width: 1500px;
     height: 50px;
     margin: 0 auto;
     background: #fff;
     z-index: 200;
     box-shadow: 0 0.1px 20px 1px #E2E1D9;
-    position:fixed;
+    position:absolute;
 }
 
 #navs,

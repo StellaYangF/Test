@@ -34,10 +34,10 @@
             // Change navPics picture:
             a.css({ background: "#2F2C2F", color: "#fff" })
                 .after(` <ul id="navPics" class="fixed margin_auto">
-            <li><a href="javascript:;"><div class="hoax"><img src="${data1}" alt="1"></div></a></li>
-            <li><a href="javascript:;"><div class="hoax"><img src="${data2}" alt="2"></div></a></li>
-            <li><a href="javascript:;"><div class="hoax"><img src="${data3}" alt="3"></div></a></li>
-            <li><a href="javascript:;"><div class="hoax"><img src="${data4}" alt="4"></div></a></li>
+            <li><a href="javascript:;" class="jumpPage"><div class="hoax"><img src="${data1}" alt="1"></div></a></li>
+            <li><a href="javascript:;" class="jumpPage"><div class="hoax"><img src="${data2}" alt="2"></div></a></li>
+            <li><a href="javascript:;" class="jumpPage"><div class="hoax"><img src="${data3}" alt="3"></div></a></li>
+            <li><a href="javascript:;" class="jumpPage"><div class="hoax"><img src="${data4}" alt="4"></div></a></li>
         </ul>`)
                 .next()
                 .animate({
@@ -55,7 +55,18 @@
                         opacity: 1
                     }, 200)
                 }
-            )
+            );
+            /***** jumPage ******/ 
+            $("#navPics").on("click",".jumpPage",function(){
+                console.log(1111);
+                $(this).attr({
+                    // node server to revise
+                    // href:"http://localhost:3000/products.html"
+                    // text code
+                    href:"http://127.0.0.1:5500/000PROJECT/Test/E-commerce/Origin%20Files/public/products.html",
+                    target:"_blank"
+                })
+            })
         })
         .on("mouseleave", "li.tab", function() {
             $(this)
@@ -64,6 +75,7 @@
             $("#navPics")
                 .remove();
         });
+
 
     /*carousel*/
     var i = 0;
