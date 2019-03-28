@@ -1,5 +1,5 @@
 header {
-    padding-top: 32px;
+    padding-top: 17px;
     position: absolute;
     background-color: transparent;
     z-index: 100;
@@ -122,13 +122,16 @@ header, .navbar, .fashion_card_content, .u_info,.fashion_card_head {
     text-align: center;
     margin-right: 50px;
 }
+.navbar,.u_info{
+    align-items:center;
+}
 .fashion_card_content,.u_info{
     justify-content: space-around;
 }
 .u_info {
-    width: 150px;
-    margin-right: 100px;
-    padding-bottom: 34px;
+    width: 190px;
+    margin-right: 10px;
+    align-items: center;
 }
 .arrow, .arrowR{
     transition: .5s all ease

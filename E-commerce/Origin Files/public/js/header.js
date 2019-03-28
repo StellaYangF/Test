@@ -50,14 +50,16 @@
             $header
                 .addClass("fixed")
                 .css({
-                    background: "#fff"
+                    background: "#fff",
+                    boxShadow: " 0 0.1px 20px 1px #E2E1D9"
                 })
         } else {
             console.log(2);
             $header
                 .removeClass("fixed")
                 .css({
-                    background: "transparent"
+                    background: "transparent",
+                    boxShadow: "none"
                 })
         }
     })
