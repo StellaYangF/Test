@@ -40,27 +40,29 @@
             $('.card_link_nav').addClass('collapse');
         });
 
-    /*******not completed*******/
+    /*******header scroll event*******/
     $header = $("header");
-    var navOffset = $header.offset().top;
     $(window).scroll(() => {
         var scrollPos = $(window).scrollTop();
         if (scrollPos > 500) {
-            console.log(1);
             $header
                 .addClass("fixed")
                 .css({
                     background: "#fff",
-                    boxShadow: " 0 0.1px 20px 1px #E2E1D9"
-                })
+                    boxShadow: " 0 0.1px 20px 1px #E2E1D9",
+                    paddingTop:0
+                });
+                $(".location")
+                .addClass("fixed");
         } else {
-            console.log(2);
             $header
                 .removeClass("fixed")
                 .css({
                     background: "transparent",
-                    boxShadow: "none"
-                })
+                    boxShadow: "none",
+                    paddingTop:"30px"
+                });
+                $(".location").removeClass("fixed");
         }
     })
 })()

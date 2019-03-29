@@ -58,7 +58,6 @@
             );
             /***** jumPage ******/ 
             $("#navPics").on("click",".jumpPage",function(){
-                console.log(1111);
                 $(this).attr({
                     // node server to revise
                     // href:"http://localhost:3000/products.html"
@@ -90,23 +89,4 @@
             i = 0;
         }
     }, 3000)
-
-    /*navs fiexed*/
-    /*******not completed*******/
-    // $header = $("#header");
-    // var navOffset = $header.offset().top;
-    // $(window).scroll(() => {
-    //     var scrollPos = $(window).scrollTop();
-    //     if (scrollPos >= navOffset) {
-    //         $header
-    //             .fadeIn(400, () => {
-    //                 $(this).addClass("fixed")
-    //             })
-    //     } else {
-    //         $header
-    //             .fadeOut(400)
-    //             .removeClass("fixed")
-    //     }
-    // })
- 
 })()

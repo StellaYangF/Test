@@ -4,17 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product List</title>
+    <title>Women</title>
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <link rel="stylesheet" href="../lib/mui/css/icons-extra.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/productList.css">
+    <link rel="stylesheet" href="css/featureContainer.css">
 </head>
 <body>
+    <table></table>
+    <!-- header import -->
+    <header></header>
+    <!-- first floor -->
     <div class="first_floor">
         <div class="nav">
-            <span><a href="javascript:;">Home</a> </span>
-            <span>Women</span>
+            <span><a href="javascript:;">首页</a> </span>
+            <span class="mui-icon mui-icon-arrowright"></span>
+            <span>女士专区</span>
+        </div>
+        <div class="nav_img">
+            <img src="img/fashion/fashion_women/women.jpg" alt="women">
+            <div class="nav_container">
+                <h3>Women</h3>
+                <p>Fashion has always been so temporary and uncertain. You can’t keep up with it.  This social phenomenon is very whimsical, thus we as the consumers always try to stay in touch with all the latest fashion tendencies.</p>
+                <ul class="nav_content">
+                    <li><span class="mui-icon mui-icon-arrowright"></span>Clothing</li>
+                    <li><span class="mui-icon mui-icon-arrowright"></span>Shoes</li>
+                    <li><span class="mui-icon mui-icon-arrowright"></span>Accessories</li>
+                </ul>
+            </div>
         </div>
     </div>
+    <!-- second floor -->
+    <div class="second_floor">
+        <div class="nav_list">
+            <ul>
+                <li><a href="javascript:;">Suppliers</a></li>
+                <li><a href="javascript:;">Anne Klein</a></li>
+                <li><a href="javascript:;">ESPRIT</a></li>
+                <li><a href="javascript:;">Jack and Jones</a></li>
+                <li><a href="javascript:;">Jack Wolfskin</a></li>
+                <li><a href="javascript:;">Levi's</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript:;">Brands</a></li>
+                <li><a href="javascript:;">Anne Klein</a></li>
+                <li><a href="javascript:;">DKNY</a></li>
+                <li><a href="javascript:;">DOLCE&GABBANA</a></li>
+                <li><a href="javascript:;">GIORGIO ARMANI</a></li>
+                <li><a href="javascript:;">HUGO BOSS
+                    </a></li>
+            </ul>
+           <div>
+               <h5><a href="javascript:;">On sale</a></h5>
+               <div class="card">
+                   <a href="javascript:;">
+                       <img src="" alt="">
+                   </a>
+                   <p><a href="javascript:;">Zara OVERSIZED PARKA</a></p>
+                   <p>Fashion has always been so temporary and uncertain....</p>
+                   <p>$20.79</p>
+               </div>
+               <div class="card">
+                    <a href="javascript:;">
+                        <img src="" alt="">
+                    </a>
+                    <p><a href="javascript:;">Zara OVERSIZED PARKA</a></p>
+                    <p>Fashion has always been so temporary and uncertain....</p>
+                    <p>$20.79</p>
+                </div>
+                <div class="card">
+                        <a href="javascript:;">
+                            <img src="" alt="">
+                        </a>
+                        <p><a href="javascript:;">Zara OVERSIZED PARKA</a></p>
+                        <p>Fashion has always been so temporary and uncertain....</p>
+                        <p>$20.79</p>
+                    </div>
+           </div>
+           <button>ALL SALE PRODUCTS</button>
+        </div>
+        <div class="p_list">
+            <button>筛选</button>
+            <div class="icon_pic">
+                <button>1</button>
+                <button>2</button>
+                <select name="sort" id="">
+                    <option value="one">Relevance</option>
+                    <option value="two">Name, A to Z</option>
+                    <option value="three">Name, Z to A</option>
+                    <option value="four">Price, low to high</option>
+                    <option value="five">Price, high to low</option>
+                </select>
+                <ul class="feature_container two">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer import -->
+    <footer></footer>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/productList.js"></script>
 </body>
 </html>

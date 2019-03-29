@@ -1,5 +1,5 @@
 header {
-    padding-top: 17px;
+    padding-top: 30px;
     position: absolute;
     background-color: transparent;
     z-index: 100;
@@ -91,8 +91,8 @@ header, .navbar, .fashion_card_content, .u_info,.fashion_card_head {
     width: 650px;
 }
 .navbar_item>.fashion_card_head {
-    margin-top:2px;
-    top: 67px;
+    margin-top: 30px;
+    top: 36px;
     width: 1300px;
     height: 600px;
     left: -170px;
@@ -121,6 +121,10 @@ header, .navbar, .fashion_card_content, .u_info,.fashion_card_head {
 .navbar_item{
     text-align: center;
     margin-right: 50px;
+    height: 100%;
+}
+.navbar_item>a{
+    margin-top:23px;
 }
 .navbar,.u_info{
     align-items:center;
