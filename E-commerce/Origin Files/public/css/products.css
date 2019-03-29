@@ -1,6 +1,6 @@
 .first_floor, .z_floor, .second_floor, .module, .feater_content, video, .fifth_floor, .feature_container.two {
     width: 1500px;
-}  
+}
 
 .z_floor {
     height: 781px;
@@ -10,48 +10,26 @@
     margin-bottom: 80px;
 }
 
-.rcmd, .first_floor, .ff_card, .lb_group, .rcontainer, .second_floor, .feature_container, .tools, .card_content {
+.first_floor, .ff_card, .lb_group, .rcontainer, .second_floor, .feature_container, .tools, .card_content {
     display: flex;
 }
 
-.rcmd {
-    right: 7px;
-    top: 135px;
-    width: 225px;
-    height: 250px;
-}
-
-.ff_card, .rcmd {
-    align-items: center;
-}
-
-.slogan {
-    font-size: 24px;
-}
-
-.ad, .slogan {
-    color: #767676;
-}
-
 .ad {
+    color: #767676;
     width: 1500px;
     height: 150px;
     bottom: 365px;
 }
 
-.ad, .carousel, .second_floor, .container, .lb_item, .img_lookbook, .card_content, .img_container.two {
+.ad, .carousel, .second_floor, .container, .lb_item, .card_content, .img_container.two {
     position: relative;
 }
 
-.rcmd, .ad, .module {
+.ad, .module {
     text-align: center;
 }
 
-.rcmd {
-    margin-right: 50px;
-}
-
-.rcmd, .ff_card, .rcontainer, .tools {
+.ff_card, .rcontainer, .tools {
     justify-content: space-around;
 }
 
@@ -59,11 +37,11 @@
     display: inline-block;
 }
 
-.img_hover, .line {
+.img_hover, .line, .tools {
     transition: .5s all ease
 }
 
-.rcmd, .btn_group, .lb_content, .card_inner_content, .line {
+.btn_group, .lb_content, .card_inner_content, .line {
     position: absolute;
 }
 
@@ -71,20 +49,9 @@
     overflow: hidden;
 }
 
-.rcmd, .ff_card {
-    flex-direction: column;
-}
-
-.card_item {
-    margin-top: 30px;
-    text-align: left;
-}
-
 .carousel_item img {
     width: 1500px;
 }
-
-/* button */
 
 .btn {
     background: #fff;
@@ -170,6 +137,8 @@
     width: 360px;
     height: 100%;
     padding: 160px 0;
+    align-items: center;
+    flex-direction: column;
 }
 
 .card_content2 {
@@ -255,11 +224,6 @@
     z-index: 2;
 }
 
-.img_lookbook {
-    width: 637px;
-    right: 128px;
-}
-
 .img_content_bg {
     background: rgb(223, 223, 223);
     width: 610px;
@@ -318,6 +282,9 @@
 
 .tools {
     padding: 0 130px;
+    position: relative;
+    opacity: 0;
+    top:27px;
 }
 
 .pname, .price {
@@ -406,3 +373,7 @@
     height: 1683px;
 }
 
+.tools .mui-icon:hover {
+    color: #000;
+    font-weight: 700;
+}

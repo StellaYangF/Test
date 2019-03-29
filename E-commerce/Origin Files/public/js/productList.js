@@ -21,7 +21,7 @@
             }
         })
     });
-
+    /***** import feature_container.html *****/
     $(function () {
         $.ajax({
             url: "featureContainer.html",
@@ -32,7 +32,7 @@
             }
         })
     });
-
+    /***** nav arrow event *****/
     $(".nav_content")
         .on("mouseenter", 'li', function () {
             $(this)
@@ -55,5 +55,11 @@
                 })
         })
 
-
+    /***** sort css setting*****/
+    $("select").on("hover", "option", function () {
+        $(this).css({
+            color:"#EA9191",
+            background:"#fff"
+        })
+    })
 })()
