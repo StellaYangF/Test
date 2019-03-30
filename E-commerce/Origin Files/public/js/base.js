@@ -1,7 +1,6 @@
 (() => {
     /*******not completed*******/
     $header = $("header");
-    var navOffset = $header.offset().top;
     $(window).scroll(() => {
         var scrollPos = $(window).scrollTop();
         if (scrollPos > 500) {

@@ -82,16 +82,15 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
 }
 
 .navbar_item>.fashion_card_head.fashion_men, .card_link_nav {
-    padding-left: 80px;
+    padding-left: 65px;
 }
 
 .card_link_nav {
     top: 0px;
-    right: -302px;
-    width: 300px;
+    right: -282px;
+    width: 278px;
     height: 250px;
     padding-top: 6px;
-    /* margin-left: 10px; */
 }
 
 .fashion_card_link {

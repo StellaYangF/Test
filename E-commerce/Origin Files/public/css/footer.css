@@ -3,7 +3,7 @@ footer,.more_info,.copyRight{
 }
 .more_info{
     padding:20px;
-    margin-bottom:40px;
+    margin:50px auto;
 }
 .more_info,.copyRight{
     justify-content: space-between;
@@ -50,7 +50,7 @@ footer,.more_info,.copyRight{
     display: inline-block;
 }
 
-.mui-icon.mui-icon-arrowup {
+.location .mui-icon.mui-icon-arrowup {
     color: #fff;
 }
 

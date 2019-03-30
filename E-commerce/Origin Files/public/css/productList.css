@@ -11,12 +11,12 @@
     padding-left: 29px;
     margin-bottom: 30px;
 }
-
-.mui-icon.mui-icon-arrowright {
+ 
+.mui-icon.mui-icon-arrowright,.mui-icon.mui-icon-arrowleft {
     font-size: 13px;
 }
 
-.second_floor, .card, .icon_pic, .btn_grp,.grid, .list {
+.second_floor, .card, .icon_pic, .btn_grp,.grid, .list,.btn_group_page {
     display: flex;
 }
 
@@ -110,7 +110,7 @@
     margin-top: 20px;
 }
 
-.card_item {
+.card_item_two {
     width: 182px;
     height: 130px;
 }
@@ -145,10 +145,10 @@ select {
     color: #2F2C2F;
 }
 
-.icon_pic {
+.icon_pic,.btn_group_page {
     align-items: center;
 }
-.btn_grp,.icon_pic {
+.btn_grp,.icon_pic,.btn_group_page {
     justify-content: space-between;
 }
 .show_list {
@@ -174,7 +174,7 @@ option {
     cursor: pointer;
 }
 
-.icon_group {
+.icon_group ,.btn_group_page{
     width: 1200px;
     height: 138px;
     padding: 0 27px;
