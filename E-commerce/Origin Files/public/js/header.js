@@ -1,4 +1,4 @@
-(() => {/*header navbar_item hover*/
+(() => { /*header navbar_item hover*/
     $('.list1')
         .mouseenter(() => {
             $(".arrow1").css({
@@ -13,11 +13,11 @@
             $('.fashion_women').addClass('collapse');
         });
     $('.list2').mouseenter(() => {
-        $(".arrow2").css({
-            transform: "rotate(-90deg)"
+            $(".arrow2").css({
+                transform: "rotate(-90deg)"
+            })
+            $('.fashion_men').removeClass('collapse');
         })
-        $('.fashion_men').removeClass('collapse');
-    })
         .mouseleave(() => {
             $(".arrow2").css({
                 transform: "rotate(90deg)"
@@ -44,15 +44,15 @@
     $header = $("header");
     $(window).scroll(() => {
         var scrollPos = $(window).scrollTop();
-        if (scrollPos > 500) {
+        if (scrollPos > 300) {
             $header
                 .addClass("fixed")
                 .css({
                     background: "#fff",
                     boxShadow: " 0 0.1px 20px 1px #E2E1D9",
-                    paddingTop:0
+                    paddingTop: 0
                 });
-                $(".location")
+            $(".location")
                 .addClass("fixed");
         } else {
             $header
@@ -60,9 +60,9 @@
                 .css({
                     background: "transparent",
                     boxShadow: "none",
-                    paddingTop:"30px"
+                    paddingTop: "30px"
                 });
-                $(".location").removeClass("fixed");
+            $(".location").removeClass("fixed");
         }
     })
 })()
