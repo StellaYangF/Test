@@ -5,7 +5,9 @@ header {
     width: 1500px;
 }
 
-header, .register, .code_forget {
+header,
+.register,
+.code_forget {
     transition: .5s all ease;
 }
 
@@ -39,15 +41,25 @@ header, .register, .code_forget {
     width: 60%;
 }
 
-header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
+header,
+.navbar,
+.fashion_card_content,
+.u_info,
+.fashion_card_head,
+.rcmd {
     display: flex;
 }
 
-.navbar_item, .header_logo，.fashion_img_content, .img_lookbook {
+.navbar_item,
+.header_logo，.fashion_img_content,
+.img_lookbook {
     position: relative;
 }
 
-.navbar_item_link, .fashion_card_content_link, .arrow, .fashion_card_link {
+.navbar_item_link,
+.fashion_card_content_link,
+.arrow,
+.fashion_card_link {
     display: inline-block;
 }
 
@@ -55,7 +67,9 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     color: rgba(0, 0, 0, 0.829);
 }
 
-.fashion_item, .fashion_card_content_link, .card_content_link {
+.fashion_item,
+.fashion_card_content_link,
+.card_content_link {
     text-align: left;
 }
 
@@ -79,7 +93,8 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     height: 397px;
 }
 
-.navbar_item>.fashion_card_head.fashion_men, .card_link_nav {
+.navbar_item>.fashion_card_head.fashion_men,
+.card_link_nav {
     padding-left: 65px;
 }
 
@@ -99,7 +114,9 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     display: block;
 }
 
-.fashion_card_content, .fashion_card_content>ul, .fashion_img_content {
+.fashion_card_content,
+.fashion_card_content>ul,
+.fashion_img_content {
     width: 650px;
 }
 
@@ -113,11 +130,17 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     padding-left: 65px;
 }
 
-.navbar_item>.fashion_card_head, .card_link_nav {
+.navbar_item>.fashion_card_head,
+.card_link_nav {
     background: #fff;
 }
 
-.navbar_item>.fashion_card_head, .card_link_nav, header, .abst, .rcmd, .close {
+.navbar_item>.fashion_card_head,
+.card_link_nav,
+header,
+.abst,
+.rcmd,
+.close {
     position: absolute;
 }
 
@@ -146,11 +169,13 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     margin-top: 23px;
 }
 
-.navbar, .u_info {
+.navbar,
+.u_info {
     align-items: center;
 }
 
-.fashion_card_content, .u_info {
+.fashion_card_content,
+.u_info {
     justify-content: space-around;
 }
 
@@ -160,7 +185,8 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     align-items: center;
 }
 
-.arrow, .arrowR {
+.arrow,
+.arrowR {
     transition: .5s all ease
 }
 
@@ -193,11 +219,15 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     display: none;
 }
 
-.fashion_link:hover, .u_info span:hover {
+.fashion_link:hover,
+.u_info span:hover {
     color: #EC9D8B;
 }
 
-.fixed, .log_container, .login_frame, .register_frame {
+.fixed,
+.log_container,
+.login_frame,
+.register_frame {
     position: fixed;
 }
 
@@ -227,9 +257,12 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     text-align: left;
 }
 
-.fashion_women, .fashion_men, .card_link_nav {
+.fashion_women,
+.fashion_men,
+.card_link_nav {
     box-shadow: rgb(226, 225, 217) 0px 0.1px 20px;
 }
+
 
 /* login frame setting */
 
@@ -241,7 +274,8 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     height: 605px;
 }
 
-.register_frame, .login_frame {
+.register_frame,
+.login_frame {
     width: 470px;
     padding: 50px;
     background: #fff;
@@ -263,14 +297,18 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     top: 27px;
     right: 36px;
     font-size: 20px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .login_frame li:not(:nth-child(6)) {
     margin-bottom: 15px;
 }
 
-.uname, .upwd, .runame, .rupwd, .remail {
+.uname,
+.upwd,
+.runame,
+.rupwd,
+.remail {
     display: inline-block;
     outline: none;
     border: none;
@@ -279,7 +317,9 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     background: #fff;
 }
 
-.btn.login, .btn.reg, .btn.backLogin {
+.btn.login,
+.btn.reg,
+.btn.backLogin {
     width: 90%;
     height: 46px;
     line-height: 35px;
@@ -298,7 +338,8 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     border: 1px solid #EC9D8B;
 }
 
-.btn.login:hover, .btn.reg:hover {
+.btn.login:hover,
+.btn.reg:hover {
     background: #2F2C2F;
     color: #fff;
 }
@@ -346,12 +387,15 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     color: #EFB015;
 }
 
-.register, .code_forget {
+.register,
+.code_forget {
     cursor: pointer;
     letter-spacing: 4px;
 }
 
-.register:hover, .code_forget:hover,.close:hover {
+.register:hover,
+.code_forget:hover,
+.close:hover {
     color: #EC9D8B;
 }
 
@@ -359,9 +403,12 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     margin-bottom: 20px;
 }
 
-.msg, .register, .code_forget {
-    font-size: 12px;
+.msg,
+.register,
+.code_forget {
+    font-size: 16px;
 }
+
 
 /* regular expression check */
 
@@ -373,7 +420,8 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     border: 1px solid black !important;
 }
 
-.vali_success, .vali_fail {
+.vali_success,
+.vali_fail {
     background-repeat: no-repeat;
     background-position: 40% center;
     display: block;
