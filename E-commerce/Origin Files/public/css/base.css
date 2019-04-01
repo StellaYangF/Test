@@ -43,3 +43,21 @@ ul {
 .collapse {
     display: none;
 }
+.location {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #EA917D;
+    padding: 12px 12px;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+}
+
+.location .mui-icon.mui-icon-arrowup {
+    color: #fff;
+}
+
+.location:hover {
+    background: #DC4725;
+}

@@ -1,46 +1,424 @@
-section,.first_floor,.second_floor{
-    width:1500px;
+section,
+.first_floor,
+.second_floor,
+.third_floor,
+.fourth_floor {
+    width: 1500px;
 }
-section{
-    height:500px;
-}
+
 .nav {
     padding-left: 29px;
     margin-bottom: 30px;
 }
+
 .nav>span:first-child {
     color: #2F2C2F;
 }
-.nav>span:last-child, .mui-icon-arrowright {
+
+.nav>span:last-child,
+.mui-icon-arrowright {
     color: #BAB3B3;
 }
 
 .nav>span:nth-child(2) {
     margin: 0 14px;
 }
+
 .mui-icon.mui-icon-arrowright {
     font-size: 13px;
 }
-.first_floor{
-    margin-top:155px;
+
+.first_floor {
+    margin-top: 155px;
 }
-.home_link:hover {
+
+.home_link:hover,
+.prev:hover,
+.next:hover,
+.rfc,
+.plus:hover,
+.minus:hover,
+.share span:hover,
+.tool span:hover,
+.summary span:nth-child(2n) {
     color: #EA9191;
 }
-.second_floor{
-    height:500px;
-    border:1px solid red;
+
+.second_floor {
+    height: 786px;
+    margin-bottom: 80px;
+}
+
+.pics_sm,
+.second_floor,
+.pics,
+.sz,
+.clr,
+.cnt,
+.comments li {
     display: flex;
 }
-.second_floor,.pics,.details{
+
+.second_floor,
+.pics,
+.details {
     box-sizing: border-box;
     outline: none;
 }
-.pics,.details{
-    width:750px;
-    height:100%;
-    border:1px solid blue;
+
+.pics,
+.details {
+    width: 750px;
+    height: 100%;
 }
-.details{
-    border:1px solid green;
+
+.img_group,
+.img_group li {
+    width: 120px;
+}
+
+.img_group img {
+    background: #fff;
+    margin-bottom: 7px;
+}
+
+.pics {
+    background: rgb(250, 248, 242);
+}
+
+.pics_sm span {
+    left: 60px;
+    width: 100px;
+    height: 24px;
+    background: #fff;
+    color: #BAB3B3;
+}
+
+.third_floor,
+.pics_sm span,
+.fourth_floor {
+    text-align: center;
+}
+
+.sz .mui-icon-arrowdown,
+.pics_sm span,
+.plus,
+.minus,
+.com_order span,
+.description,
+.pdetails,
+.comments {
+    position: absolute;
+}
+
+.sz .mui-icon-arrowdown,
+.com_order span {
+    right: 10px;
+    bottom: 27px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+    z-index: -1;
+}
+
+.pics_sm span,
+.img_group img,
+.clr_white,
+.clr_red,
+.plus,
+.minus,
+.share span,
+.tool span,
+.info {
+    cursor: pointer;
+}
+
+.next {
+    bottom: 0px;
+}
+
+.prev {
+    top: 0px;
+}
+
+.pics_md img {
+    width: 600px;
+}
+
+.img_group img {
+    width: 100px;
+    height: 135px;
+}
+
+.pics_sm {
+    padding: 30px 0 0 60px;
+    width: 160px;
+    flex-direction: column;
+    align-content: center;
+    overflow: hidden;
+}
+
+.sz,
+.pics_sm,
+.count,
+.com_order,
+.prod_content {
+    position: relative;
+}
+
+.details {
+    padding: 30px 120px 0 95px;
+}
+
+.details li {
+    margin-bottom: 25px;
+    color: #BAB3B3;
+}
+
+.rfc {
+    margin-left: 40px;
+}
+
+.details .title {
+    color: #2f2c2f;
+    font-size: 24px;
+}
+
+.details .stock {
+    width: 70px;
+    height: 35px;
+    background: rgb(170, 192, 92);
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 13px;
+}
+
+.details .price {
+    color: #000;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+#psize {
+    width: 300px;
+    border: 1px solid #BAB3B3 !important;
+    color: #000;
+    background: transparent;
+}
+
+.sz,
+.comments li:first-child {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clr_white,
+.clr_red {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.clr_white {
+    border: 1px solid black;
+}
+
+.clr_red {
+    background: rgb(232, 76, 61);
+}
+
+.clr div {
+    margin-left: 200px;
+}
+
+.clr div span {
+    margin-right: 20px;
+}
+
+.count input,
+.clr_white,
+.clr_red {
+    display: inline-block;
+}
+
+.count input,
+.count {
+    width: 100px;
+}
+
+.count input {
+    height: 58px;
+    padding: 16px 35px 16px 25px;
+}
+
+.plus,
+.minus {
+    right: 17px;
+    font-size: 10px;
+    color: #000;
+}
+
+.plus {
+    top: 11px;
+}
+
+.minus {
+    bottom: 28px;
+}
+
+.btn_cart {
+    display: inline-block;
+    height: 63px;
+    width: 270px;
+    margin-left: 32px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    background: rgb(244, 196, 185);
+}
+
+.share span,
+.tool span {
+    color: #2F2C2F;
+    margin-right: 10px;
+}
+
+.share {
+    margin-top: 60px;
+}
+
+.info {
+    letter-spacing: 5px;
+    color: #BAB3B3;
+    padding-bottom: 10px;
+    transition: .5s all ease;
+}
+
+.info.one {
+    border-bottom: 2px solid rgb(203, 170, 149);
+    color: #2F2C2F;
+}
+
+.span {
+    margin: 0px 30px;
+}
+
+.prod_info span {
+    font-size: 20px;
+}
+
+.active,
+.info:hover {
+    color: #2F2C2F;
+}
+
+.prod_content {
+    margin: 45px auto;
+    text-align: left;
+    height: 560px;
+}
+
+.prod_content div,
+.prod_content ul,
+.prod_content,
+.feature_container,
+.comments li {
+    width: 1200px;
+}
+
+.feature_container {
+    margin: auto;
+}
+
+.description p {
+    font-size: 16px;
+    text-indent: 35px;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.pdesc,
+.summary span {
+    color: #8f8f94;
+}
+
+.summary span:nth-child(2n) {
+    margin: 0 80px 0 10px;
+}
+
+.pdesc li {
+    border-bottom: 1px solid rgb(212, 208, 208);
+    width: 600px;
+    margin-top: 40px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.pdesc li span:first-child {
+    margin: 0 250px 0 20px;
+}
+
+.pdesc li:last-child span:first-child {
+    margin: 0 217px 0 20px;
+}
+
+.input_group input:not(:first-child) {
+    margin-left: 30px;
+}
+
+#cmt_order {
+    margin-bottom: 0;
+    border: 1px solid #BAB3B3 !important;
+    width: 120px;
+    height: 40px;
+    background: transparent;
+}
+
+.com_order span {
+    right: 13px;
+    bottom: 14px;
+}
+
+.comment_content>img {
+    width: 30px;
+    height: 40px;
+    margin: 10px 30px 10px 2px;
+}
+
+.comment_content {
+    padding: 5px 0 5px 5px;
+}
+
+.rcmd_pics img {
+    width: 40px;
+    height: 40px;
+}
+
+.comment_content div p {
+    color: #000;
+}
+
+.comment_content div {
+    width: 1125px;
+}
+
+.c_info {
+    color: #BAB3B3;
+}
+
+.c_info span {
+    margin-right: 25px;
+}
+
+.comments li {
+    border-bottom: 1px solid #eee;
+}
+
+.comments .input_group {
+    width: 800px;
+}
+
+.comments .com_order {
+    width: 120px;
 }

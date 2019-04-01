@@ -1,13 +1,12 @@
 header {
     padding-top: 30px;
-    position: absolute;
     background-color: transparent;
     z-index: 100;
-    transition: .5s all ease;
+    width: 1500px;
 }
 
-header {
-    width: 1500px;
+header, .register, .code_forget {
+    transition: .5s all ease;
 }
 
 .header_logo {
@@ -25,7 +24,6 @@ header {
     text-align: center;
     margin-right: 50px;
     justify-content: space-around;
-    position: absolute;
     flex-direction: column;
 }
 
@@ -119,7 +117,7 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     background: #fff;
 }
 
-.navbar_item>.fashion_card_head, .card_link_nav {
+.navbar_item>.fashion_card_head, .card_link_nav, header, .abst, .rcmd, .close {
     position: absolute;
 }
 
@@ -199,12 +197,8 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     color: #EC9D8B;
 }
 
-.fixed {
+.fixed, .log_container, .login_frame, .register_frame {
     position: fixed;
-}
-
-.abst {
-    position: absolute;
 }
 
 .header_logo_content>img {
@@ -232,6 +226,168 @@ header, .navbar, .fashion_card_content, .u_info, .fashion_card_head, .rcmd {
     margin-top: 30px;
     text-align: left;
 }
-.fashion_women,.fashion_men,.card_link_nav{
+
+.fashion_women, .fashion_men, .card_link_nav {
     box-shadow: rgb(226, 225, 217) 0px 0.1px 20px;
+}
+
+/* login frame setting */
+
+.login_frame {
+    height: 455px;
+}
+
+.register_frame {
+    height: 605px;
+}
+
+.register_frame, .login_frame {
+    width: 470px;
+    padding: 50px;
+    background: #fff;
+    top: 10%;
+    text-align: center;
+    box-shadow: rgb(246, 245, 245) 0px 0.1px 5px;
+    left: 34%;
+}
+
+.log_container {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+}
+
+.close {
+    top: 27px;
+    right: 36px;
+    font-size: 20px;
+    cursor:pointer;
+}
+
+.login_frame li:not(:nth-child(6)) {
+    margin-bottom: 15px;
+}
+
+.uname, .upwd, .runame, .rupwd, .remail {
+    display: inline-block;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    background: #fff;
+}
+
+.btn.login, .btn.reg, .btn.backLogin {
+    width: 90%;
+    height: 46px;
+    line-height: 35px;
+    box-shadow: none;
+    border: 2px solid #eee;
+}
+
+.btn.backLogin {
+    background: #EC9D8B;
+    color: #fff;
+}
+
+.btn.backLogin:hover {
+    background: #fff;
+    color: #EC9D8B;
+    border: 1px solid #EC9D8B;
+}
+
+.btn.login:hover, .btn.reg:hover {
+    background: #2F2C2F;
+    color: #fff;
+}
+
+.share span {
+    margin-right: 10px;
+    width: 110px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 20px;
+    display: inline-block;
+    color: #fff;
+    background: #E22428;
+    cursor: pointer;
+}
+
+.share span:hover {
+    background: #fff;
+}
+
+.mui-icon.mui-icon-weixin {
+    background: #00D105;
+}
+
+.mui-icon.mui-icon-qq {
+    background: #EFB015;
+}
+
+.login_frame li:nth-child(2) {
+    font-size: 20px;
+}
+
+.mui-icon.mui-icon-weibo:hover {
+    border: 1px solid #E22428;
+    color: #E22428;
+}
+
+.mui-icon.mui-icon-weixin:hover {
+    border: 1px solid #00D105;
+    color: #00D105;
+}
+
+.mui-icon.mui-icon-qq:hover {
+    border: 1px solid #EFB015;
+    color: #EFB015;
+}
+
+.register, .code_forget {
+    cursor: pointer;
+    letter-spacing: 4px;
+}
+
+.register:hover, .code_forget:hover,.close:hover {
+    color: #EC9D8B;
+}
+
+.register_frame li {
+    margin-bottom: 20px;
+}
+
+.msg, .register, .code_forget {
+    font-size: 12px;
+}
+
+/* regular expression check */
+
+.vali_info {
+    display: none;
+}
+
+.txt_focus {
+    border: 1px solid black !important;
+}
+
+.vali_success, .vali_fail {
+    background-repeat: no-repeat;
+    background-position: 40% center;
+    display: block;
+}
+
+.vali_success {
+    background-image: url("../img/log/ok.png");
+    padding-left: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.vali_fail {
+    background-image: url("../img/log/err.png");
+    color: Red;
+    padding-left: 30px;
 }

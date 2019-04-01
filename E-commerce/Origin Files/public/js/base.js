@@ -4,18 +4,19 @@
     $(window).scroll(() => {
         var scrollPos = $(window).scrollTop();
         if (scrollPos > 500) {
-            console.log(1);
             $header
                 .addClass("fixed")
                 .css({
                     background: "#fff"
                 });
-                // 
-                $(".location")
+            // 
+            $(".location")
+                .addClass("fixed");
         } else {
-            console.log(2);
             $header
-                .removeClass("fixed")
+                .removeClass("fixed");
+            $(".location")
+                .removeClass("fixed");
         }
     })
 })()

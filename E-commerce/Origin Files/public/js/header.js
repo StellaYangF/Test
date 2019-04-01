@@ -1,4 +1,4 @@
-(() => {/*header navbar_item hover*/
+(() => { /*header navbar_item hover*/
     $('.list1')
         .mouseenter(() => {
             $(".arrow1").css({
@@ -13,11 +13,11 @@
             $('.fashion_women').addClass('collapse');
         });
     $('.list2').mouseenter(() => {
-        $(".arrow2").css({
-            transform: "rotate(-90deg)"
+            $(".arrow2").css({
+                transform: "rotate(-90deg)"
+            })
+            $('.fashion_men').removeClass('collapse');
         })
-        $('.fashion_men').removeClass('collapse');
-    })
         .mouseleave(() => {
             $(".arrow2").css({
                 transform: "rotate(90deg)"
@@ -44,15 +44,15 @@
     $header = $("header");
     $(window).scroll(() => {
         var scrollPos = $(window).scrollTop();
-        if (scrollPos > 500) {
+        if (scrollPos > 300) {
             $header
                 .addClass("fixed")
                 .css({
                     background: "#fff",
                     boxShadow: " 0 0.1px 20px 1px #E2E1D9",
-                    paddingTop:0
+                    paddingTop: 0
                 });
-                $(".location")
+            $(".location")
                 .addClass("fixed");
         } else {
             $header
@@ -60,9 +60,33 @@
                 .css({
                     background: "transparent",
                     boxShadow: "none",
-                    paddingTop:"30px"
+                    paddingTop: "30px"
                 });
-                $(".location").removeClass("fixed");
+            $(".location").removeClass("fixed");
         }
+    });
+
+    /*******register back to login*******/
+    $(".backLogin").click(()=>{
+        $(".register_frame").addClass("collapse");
+        $(".login_frame").removeClass("collapse");
+    });
+
+    /*******login  jump to register*******/
+    $(".register").click(()=>{
+        $(".login_frame").addClass("collapse");
+        $(".register_frame").removeClass("collapse");
     })
+
+    /*******close event*******/
+    $(".close").click(()=>{
+        $(".log_container").addClass("collapse");
+    })
+
+    /*******log_container*******/
+    // $(".log_container").click((e)=>{
+    //     if(e.target.nodeName!="UL"){
+    //         $(".log_container").addClass("collapse")
+    //     }
+    // })
 })()
