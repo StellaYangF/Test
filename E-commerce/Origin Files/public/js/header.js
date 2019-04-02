@@ -13,11 +13,11 @@
             $('.fashion_women').addClass('collapse');
         });
     $('.list2').mouseenter(() => {
-            $(".arrow2").css({
-                transform: "rotate(-90deg)"
-            })
-            $('.fashion_men').removeClass('collapse');
+        $(".arrow2").css({
+            transform: "rotate(-90deg)"
         })
+        $('.fashion_men').removeClass('collapse');
+    })
         .mouseleave(() => {
             $(".arrow2").css({
                 transform: "rotate(90deg)"
@@ -66,27 +66,9 @@
         }
     });
 
-    /*******register back to login*******/
-    $(".backLogin").click(()=>{
-        $(".register_frame").addClass("collapse");
-        $(".login_frame").removeClass("collapse");
-    });
-
-    /*******login  jump to register*******/
-    $(".register").click(()=>{
-        $(".login_frame").addClass("collapse");
-        $(".register_frame").removeClass("collapse");
+    /*******header icon-person click event*******/
+    $(".mui-icon-person").click(() => {
+        $(".log_container")
+            .removeClass("collapse")
     })
-
-    /*******close event*******/
-    $(".close").click(()=>{
-        $(".log_container").addClass("collapse");
-    })
-
-    /*******log_container*******/
-    // $(".log_container").click((e)=>{
-    //     if(e.target.nodeName!="UL"){
-    //         $(".log_container").addClass("collapse")
-    //     }
-    // })
 })()

@@ -4,6 +4,7 @@
     <header></header>
     <!--body -->
     <section>
+    <div class=" log_container collapse"></div>
         <!-- first floor -->
         <div class="first_floor">
             <div class="nav">
@@ -249,6 +250,16 @@
             }
         })
     });
+    /***** import log *****/
+    $(function(){
+        $.ajax({
+            url:"log.html",
+            type:"get",
+            success:(res)=>{
+                $(".log_container").html(res);
+            }
+        })
+    })
 
     /***** products event *****/
     $(".prod_info")

@@ -1,8 +1,9 @@
 (() => {
     /***** document content padding *****/
-    $elem=$(`<table></table>
+    $elem = $(`<table></table>
     <!-- header import -->
     <header></header>
+    <div class=" log_container collapse"></div>
     <!-- first floor -->
     <div class="first_floor">
         <div class="nav">
@@ -164,6 +165,17 @@
             }
         })
     });
+
+    /***** import log *****/
+    $(function () {
+        $.ajax({
+            url: "log.html",
+            type: "get",
+            success: (res) => {
+                $(".log_container").html(res);
+            }
+        })
+    })
     /***** nav arrow event *****/
     $(".nav_content")
         .on("mouseenter", 'li', function () {
@@ -190,8 +202,10 @@
     /***** sort css setting*****/
     $("select").on("hover", "option", function () {
         $(this).css({
-            color:"#EA9191",
-            background:"#fff"
+            color: "#EA9191",
+            background: "#fff"
         })
     })
+
+
 })()

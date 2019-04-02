@@ -2,6 +2,7 @@
     /***** document content padding *****/
     $elem = $(`    <!-- top navbar -->
     <header id="header"></header>
+    <div class=" log_container collapse"></div>
     <!-- carousel slide -->
     <div class="z_floor ">
     <div class=" carousel ">
@@ -415,7 +416,15 @@
         })
     });
 
-    /***** btn buy now event *****/
-
+    /***** import log *****/
+    $(function(){
+        $.ajax({
+            url:"log.html",
+            type:"get",
+            success:(res)=>{
+                $(".log_container").html(res);
+            }
+        })
+    })
 })();
 

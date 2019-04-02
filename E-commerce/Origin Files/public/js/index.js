@@ -2,6 +2,7 @@
     /***** document content padding *****/
     var $elem = $(`<table></table>
     <header id="header">
+    <div class=" log_container collapse"></div>
         <ul id="navs">
             <li class="tab"><a href="javascript:;" class="color_black link_style_none" data1="img/home/Fashion-1.jpg"
                     data2="img/home/Fashion-2.jpg" data3="img/home/Fashion-3.jpg" data4="img/home/Fashion-4.jpg">时尚</a>
@@ -546,6 +547,27 @@
         .children("img")
         .css({ position: "relative" });
 
+    /*******not completed*******/
+    $header = $("#header");
+    $(window).scroll(() => {
+        var scrollPos = $(window).scrollTop();
+        if (scrollPos > 500) {
+            $header
+                .addClass("fixed")
+                .css({
+                    background: "#fff"
+                });
+            // 
+            $(".location")
+                .addClass("fixed");
+        } else {
+            $header
+                .removeClass("fixed");
+            $(".location")
+                .removeClass("fixed");
+        }
+    })
+
     /*****   navs hover setting*****/
     var $ul = $("#header>ul");
     $ul.on("mouseenter", "li.tab", function () {
@@ -610,5 +632,15 @@
         } else {
             i = 0;
         }
-    }, 3000)
+    }, 3000);
+    /***** import log *****/
+    $(function () {
+        $.ajax({
+            url: "log.html",
+            type: "get",
+            success: (res) => {
+                $(".log_container").html(res);
+            }
+        })
+    })
 })()

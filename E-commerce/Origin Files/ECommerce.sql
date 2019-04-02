@@ -102,4 +102,5 @@ CREATE TABLE e_comment(
   nid INT,
   content VARCHAR(120),
   ctime DATETIME
-)
+);
+

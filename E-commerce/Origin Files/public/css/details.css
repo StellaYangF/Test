@@ -332,12 +332,14 @@ section,
 }
 
 .description p {
-    font-size: 16px;
+    font-size: 18px;
     text-indent: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 73px;
     text-align: justify;
 }
-
+.description{
+    padding:40px 0px;
+}
 .pdesc,
 .summary span {
     color: #8f8f94;
@@ -347,6 +349,14 @@ section,
     margin: 0 80px 0 10px;
 }
 
+.pdetails{
+    padding:40px;
+    text-align: center;
+}
+.prod_content .pdesc{
+    width:673px;
+    margin-left: 257px;
+}
 .pdesc li {
     border-bottom: 1px solid rgb(212, 208, 208);
     width: 600px;
@@ -401,6 +411,7 @@ section,
 
 .comment_content div {
     width: 1125px;
+    padding: 1px 20px 2px 5px;
 }
 
 .c_info {
