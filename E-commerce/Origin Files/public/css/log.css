@@ -171,3 +171,10 @@
     color: Red;
     padding-left: 30px;
 }
+.resMsg{
+    width:370px;
+    height:30px;
+    display: inline-block;
+    margin-bottom:0;
+    padding-top:10px;
+}

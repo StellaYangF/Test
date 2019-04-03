@@ -2,11 +2,12 @@ SET NAMES UTF8;
 DROP DATABASE IF EXISTS e_commerce;
 CREATE DATABASE e_commerce CHARSET=UTF8;
 USE e_commerce;
+
+/*_login*/
 CREATE TABLE e_login(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    uname VARCHAR(25),
-    pwd VARCHAR(32),
-    email VARCHAR(30)
+    name VARCHAR(25),
+    pwd VARCHAR(32)
 );
 #增
 INSERT INTO e_login VALUES ("1","Stella",md5
@@ -104,3 +105,12 @@ CREATE TABLE e_comment(
   ctime DATETIME
 );
 
+#创建注册表
+CREATE TABLE e_user(
+    uid INT PRIMARY KEY AUTO_INCREMENT,
+    uname VARCHAR(25),
+    upwd VARCHAR(32),
+    email VARCHAR(64),
+    tel VARCHAR(16),
+    sex INT
+); 
