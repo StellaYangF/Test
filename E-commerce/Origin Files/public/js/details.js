@@ -215,51 +215,11 @@
     <footer></footer>`);
     $("body").prepend($elem);
 
-    /***** import header.html *****/
-    $(function () {
-        $.ajax({
-            url: "header.html",
-            type: "get",
-            success: (res) => {
-                $("header")
-                    .html(res);
-            }
-        })
-    })
-
-    /***** import footer.html *****/
-    $(function () {
-        $.ajax({
-            url: "footer.html",
-            type: "get",
-            success: (res) => {
-                $("footer")
-                    .html(res);
-            }
-        })
-    });
-
+    Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
+    Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
+    Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
     /***** import feature_container.html *****/
-    $(function () {
-        $.ajax({
-            url: "featureContainer.html",
-            type: "get",
-            success: (res) => {
-                $(".feature_container.two")
-                    .html(res);
-            }
-        })
-    });
-    /***** import log *****/
-    $(function(){
-        $.ajax({
-            url:"log.html",
-            type:"get",
-            success:(res)=>{
-                $(".log_container").html(res);
-            }
-        })
-    })
+    Utils.importHtml("featureContainer.html", ".feature_container.two")
 
     /***** products event *****/
     $(".prod_info")

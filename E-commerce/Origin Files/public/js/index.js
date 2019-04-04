@@ -633,14 +633,6 @@
             i = 0;
         }
     }, 3000);
-    /***** import log *****/
-    $(function () {
-        $.ajax({
-            url: "log.html",
-            type: "get",
-            success: (res) => {
-                $(".log_container").html(res);
-            }
-        })
-    })
+
+    Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
 })()
