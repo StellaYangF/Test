@@ -7,7 +7,8 @@ header {
 
 header,
 .register,
-.code_forget,.log_container {
+.code_forget,
+.log_container {
     transition: .5s all ease;
 }
 
@@ -179,9 +180,15 @@ header,
 }
 
 .u_info {
-    width: 190px;
+    width: 310px;
     margin-right: 10px;
     align-items: center;
+}
+
+.u_info li {
+    width: 25%;
+    text-align: center;
+    color: #EA917D;
 }
 
 .arrow,

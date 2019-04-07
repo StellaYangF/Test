@@ -349,4 +349,3 @@
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
 })()
-

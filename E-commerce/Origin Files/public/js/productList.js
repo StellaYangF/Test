@@ -132,15 +132,22 @@
     <footer></footer>`);
     $("body").prepend($elem);
 
+    $(function() {
+        console.log(sessionStorage.uid);
+        if (sessionStorage.uid) {
+            $('.u_info li').first().html(`欢迎登录` + uname)
+        }
+    })
+
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
-    /***** import feature_container.html *****/
+        /***** import feature_container.html *****/
     Utils.importHtml("featureContainer.html", ".feature_container.two")
 
     /***** nav arrow event *****/
     $(".nav_content")
-        .on("mouseenter", 'li', function () {
+        .on("mouseenter", 'li', function() {
             $(this)
                 .css({
                     color: "#F9DEAA"
@@ -150,7 +157,7 @@
                     transform: "translate(5px)"
                 })
         })
-        .on("mouseleave", 'li', function () {
+        .on("mouseleave", 'li', function() {
             $(this)
                 .css({
                     color: "#fff"
@@ -162,7 +169,7 @@
         })
 
     /***** sort css setting*****/
-    $("select").on("hover", "option", function () {
+    $("select").on("hover", "option", function() {
         $(this).css({
             color: "#EA9191",
             background: "#fff"

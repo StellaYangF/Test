@@ -13,11 +13,11 @@
             $('.fashion_women').addClass('collapse');
         });
     $('.list2').mouseenter(() => {
-        $(".arrow2").css({
-            transform: "rotate(-90deg)"
+            $(".arrow2").css({
+                transform: "rotate(-90deg)"
+            })
+            $('.fashion_men').removeClass('collapse');
         })
-        $('.fashion_men').removeClass('collapse');
-    })
         .mouseleave(() => {
             $(".arrow2").css({
                 transform: "rotate(90deg)"
@@ -70,5 +70,10 @@
     $(".mui-icon-person").click(() => {
         $(".log_container")
             .removeClass("collapse")
+    })
+    $('.navbar').on('click', '.navbar_item_link', function() {
+        $(this).attr({
+            href: "http://localhost:3000/productList.html"
+        })
     })
 })()
