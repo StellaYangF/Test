@@ -70,7 +70,7 @@
     $(".mui-icon-person").click(() => {
         $(".log_container")
             .removeClass("collapse");
-            $('.msg').removeClass('vali_fail').removeClass('vali_success').html('');
+        $('.msg').removeClass('vali_fail').removeClass('vali_success').html('');
     })
 
 
@@ -81,18 +81,12 @@
         })
     })
 
-    
+
     // header ul_info
-    $(function () {
+    $(function() {
         if (sessionStorage.uid) {
             console.log($('.u_info li'));
-            $('.u_info li').first().html(`欢迎` + sessionStorage.uname+`<br><a href="javascript:;" class="logOut">退出</a>`);
+            $('.u_info li').first().html(`欢迎<br>` + sessionStorage.uname);
         }
-    })
-
-    // logout
-    $('.logOut').click(()=>{
-        sessionStorage.clear();
-        $('.u_info li').first().html(`<a href=" javascript:; " id=" icon-person "><span class=" mui-icon mui-icon-person "></span></a>`)
     })
 })()

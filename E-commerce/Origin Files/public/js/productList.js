@@ -108,137 +108,9 @@
                     <span class="show_list">Showing 1-12 of 31 item(s)</span>
                 </div>
             </div>
-            <!-- product list -->
-            <ul class="feature_container two">
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg ">
-            <img src="img/fashion/fashion_women/product_1_back.jpg"' alt="1" >
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg">
-            <img src="img/fashion/fashion_women/product_2_font.jpg" alt="1" data_src="img/fashion/fashion_women/product_2_back.jpg">
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg">
-            <img src="img/fashion/fashion_women/product_3_font.jpg" alt="1" data_src="img/fashion/fashion_women/product_3_back.jpg">
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg">
-            <img src="img/fashion/fashion_women/product_4_font.jpg" alt="1" data_src="img/fashion/fashion_women/product_4_back.jpg">
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg">
-            <img src="img/fashion/fashion_women/product_5_font.jpg" alt="1" data_src="img/fashion/fashion_women/product_5_back.jpg">
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg">
-            <img src="img/fashion/fashion_women/product_6_font.jpg" alt="1" data_src="img/fashion/fashion_women/product_6_back.jpg">
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg">
-            <img src="img/fashion/fashion_women/product_6_font.jpg" alt="1" data_src="img/fashion/fashion_women/product_6_back.jpg">
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-    <li class="list_item">
-        <a href="javascript:;" class="img_item img_bg">
-            <img src="img/fashion/fashion_women/product_6_font.jpg" alt="1" data_src="img/fashion/fashion_women/product_6_back.jpg">
-        </a>
-        <div class="card_body">
-            <p class="pname"><a href="javascript:;">衬衫</a></p>
-            <p class="price">¥19.99</p>
-            <div class="tools">
-                <a href="javascript:;">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span>
-                </a>
-                <a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a>
-                <a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a>
-            </div>
-        </div>
-    </li>
-</ul>
+    <!-- product list -->
+    <ul class="feature_container two">
+    </ul>
             <!-- btn_group_page -->
             <div class="btn_group_page">
                 <div>
@@ -260,16 +132,37 @@
     <footer></footer>`);
     $("body").prepend($elem);
 
+    // database get list
+    $.ajax({
+        url: 'http://localhost:3000/product/list',
+        type: 'get',
+        dataType: 'json',
+    }).then((res) => {
+        var list = res.data;
+        var html = '';
+        for (var item of list) {
+            html += `<li class="list_item"><a href="http://localhost:3000/productDetails.html?pid=${item.pid}"class="img_item img_bg "><img src=${item.img_front} data-imgFront=${item.img_front} data-imgBack=${item.img_back} alt=${item.pid} ></a><div class="card_body"><p class="pname"><a href="javascript:;">${item.pname}</a></p><p class="price">¥${item.price.toFixed(2)}</p><div class="tools"><a href="javascript:;"><span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span></a><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a><a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a></div></div></li>`
+        };
+        $('.feature_container.two')
+            .html(html)
+            // list_item hover event
+            .on('mouseenter', 'img', function() {
+                var src = $(this).attr('data-imgBack');
+                $(this).attr({ src })
+            })
+            .on('mouseleave', 'img', function() {
+                var src = $(this).attr('data-imgFront');
+                $(this).attr({ src })
+            });
+    })
 
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
-    /***** import feature_container.html *****/
-    Utils.importHtml("featureContainer.html", ".feature_container.two")
 
     /***** nav arrow event *****/
     $(".nav_content")
-        .on("mouseenter", 'li', function () {
+        .on("mouseenter", 'li', function() {
             $(this)
                 .css({
                     color: "#F9DEAA"
@@ -279,7 +172,7 @@
                     transform: "translate(5px)"
                 })
         })
-        .on("mouseleave", 'li', function () {
+        .on("mouseleave", 'li', function() {
             $(this)
                 .css({
                     color: "#fff"
@@ -291,12 +184,17 @@
         })
 
     /***** sort css setting*****/
-    $("select").on("hover", "option", function () {
+    $("select").on("hover", "option", function() {
         $(this).css({
             color: "#EA9191",
             background: "#fff"
         })
     })
 
-
+    // home_link
+    $('.home_link').click(function() {
+        $(this).attr({
+            href: 'http://localhost:3000/products.html'
+        });
+    })
 })()

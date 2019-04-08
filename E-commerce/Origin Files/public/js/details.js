@@ -209,24 +209,48 @@
         <div class="fourth_floor">
             <h2>你可能还喜欢</h2>
             <!-- product list -->
-            <ul class="feature_container two">
+            <ul class="feature_container two"></ul>
         </div>
     </section>
     <footer></footer>`);
     $("body").prepend($elem);
 
-    // header ul_info
+    // database get list
+    $.ajax({
+            url: 'http://localhost:3000/product/list',
+            type: 'get',
+            dataType: 'json',
+            data: { pno: 1, psize: 8 }
+        }).then((res) => {
+            var list = res.data;
+            var html = '';
+            for (var item of list) {
+                html += `<li class="list_item"><a href="http://localhost:3000/productDetails.html?pid=${item.pid}"class="img_item img_bg "><img src=${item.img_front} 
+       data-imgFront=${item.img_front} data-imgBack=${item.img_back} alt=${item.pid} ></a><div class="card_body"><p class="pname"><a href="javascript:;">${item.pname}</a></p><p class="price">¥${item.price.toFixed(2)}</p><div class="tools"><a href="javascript:;"><span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span></a><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a><a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a></div></div></li>`
+            };
+            $('.feature_container.two').html(html)
+                // list_item hover event
+                .on('mouseenter', 'img', function() {
+                    var src = $(this).attr('data-imgBack');
+                    $(this).attr({ src })
+                })
+                .on('mouseleave', 'img', function() {
+                    var src = $(this).attr('data-imgFront');
+                    $(this).attr({ src })
+                });
+        })
+        // header ul_info
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
 
     /***** products event *****/
     $(".prod_info")
-        .on("click", ".info", function () {
+        .on("click", ".info", function() {
             $(this).css({
-                borderBottom: "2px solid rgb(203,170,149)",
-                color: "#2F2C2F"
-            })
+                    borderBottom: "2px solid rgb(203,170,149)",
+                    color: "#2F2C2F"
+                })
                 .siblings().css({
                     color: "#BAB3B3",
                     borderBottom: "none"

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 // import self defined modules
 const user = require('./routes/user.router.js');
+const product = require('./routes/product.router.js');
 const session = require("express-session");
 
 // initialize server from express()
@@ -32,4 +33,4 @@ server.use(bodyParser.urlencoded({
     extended: false
 }));
 server.use('/user', user);
-
+server.use('/product', product);

@@ -190,9 +190,7 @@ header,
     text-align: center;
     color: #EA917D;
 }
-.logOut{
-    font-size: 14px;
-}
+
 .arrow,
 .arrowR {
     transition: .5s all ease
@@ -228,7 +226,8 @@ header,
 }
 
 .fashion_link:hover,
-.u_info span:hover,.logOut:hover {
+.u_info span:hover,
+.logOut:hover {
     color: #EC9D8B;
 }
 
