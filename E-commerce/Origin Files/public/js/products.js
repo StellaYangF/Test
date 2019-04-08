@@ -315,6 +315,11 @@
     <!-- import footer  -->
     <footer></footer>`);
     $("body").prepend($elem);
+    
+    Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
+    Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
+    Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
+
 
     /*****window load finished then invoke the slide*******/
     $(window).load(() => {
@@ -345,7 +350,4 @@
             })
         });
 
-    Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
-    Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
-    Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
 })()

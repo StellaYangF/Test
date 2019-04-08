@@ -215,11 +215,10 @@
     <footer></footer>`);
     $("body").prepend($elem);
 
+    // header ul_info
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
-    /***** import feature_container.html *****/
-    Utils.importHtml("featureContainer.html", ".feature_container.two")
 
     /***** products event *****/
     $(".prod_info")

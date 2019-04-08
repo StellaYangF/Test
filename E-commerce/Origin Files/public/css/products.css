@@ -45,7 +45,7 @@
     position: absolute;
 }
 
-.container, .img_content_bg, .feature_content.one, .img_content, .img_item>a {
+.container, .img_content_bg, .feature_content.one, .img_content, .img_item>a,.feature_content {
     overflow: hidden;
 }
 

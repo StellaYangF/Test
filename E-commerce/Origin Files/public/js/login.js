@@ -23,9 +23,9 @@
 
     /*******login verify*******/
     $(".login_frame")
-        .on("focus", ".user", function() { $(this).addClass("txt_focus").siblings('.msg').html(''); })
+        .on("focus", ".user", function () { $(this).addClass("txt_focus").siblings('.msg').html(''); })
         // function onfocus onblur
-        .on("blur", ".user", function() {
+        .on("blur", ".user", function () {
             $(this).removeClass("txt_focus")
                 .siblings('.msg').html('');
         })
@@ -44,8 +44,9 @@
                         type: "post",
                         data: { uname, upwd },
                     }).then((result) => {
-                        $('.resMsg').html(result.msg);
+                        console.log(result);
                         if (result.code == -1) {
+                            $('.resMsg').html(result.msg);
                             $('.login_frame')
                                 .find('.user').val(``)
                                 .siblings('.msg').html(``);
@@ -54,10 +55,13 @@
                                 $('.resMsg').html(``)
                             }, 1500)
                         } else {
+                            sessionStorage.setItem('uid', result.data);
+                            sessionStorage.setItem('uname', uname);
+                            $('.resMsg').html(result.msg + `，3秒后跳转登购买页`);
                             setTimeout(() => {
                                 $('.log_container').addClass('collapse');
                             }, 3000)
-                            $('.u_info li').first().html(`欢迎` + uname)
+                            $('.u_info li').first().html(`欢迎` + uname + `<br><a href="javascript:;" class="logOut">退出</a>`)
                         }
                     })
                 }
@@ -66,7 +70,7 @@
 
     /*******register verify*******/
     $(".register_frame")
-        .on("focus", ".user", function() {
+        .on("focus", ".user", function () {
             var txt = $(this);
             txt.addClass('txt_focus').siblings('.msg').removeClass('vali_fail').removeClass('vali_success')
             if (txt.is('.uname')) { $('.msg.one').html('3-10个字符以内的字母、数字或下划线的组合') };
@@ -74,7 +78,7 @@
             if (txt.is('.tel')) { $('.msg.three').html('有效的联系方式') }
             if (txt.is('.upwd')) { $('.msg.four').html('6-16个字符以内的字母、数字或下划线的组合') }
         })
-        .on("blur", ".user", function() {
+        .on("blur", ".user", function () {
             $(this).removeClass("txt_focus").siblings('.msg').removeClass('vali_fail').removeClass('vali_success');
             var uname = $('.uname.two').val(),
                 email = $('.email').val(),
@@ -86,7 +90,6 @@
                 regUpwd = /^\w{6,12}$/;
             if ($(this).is('.uname')) {
                 if (!regUname.test(uname)) {
-                    $('.uname').focus();
                     $('.msg.one')
                         .html('用户名格式有误').addClass('vali_fail');
                 } else {
@@ -94,7 +97,7 @@
                         url: "http://localhost:3000/user/verifyUname",
                         type: "get",
                         data: { uname },
-                    }).then(function(res) {
+                    }).then(function (res) {
                         // verify database whether the uname exists
                         if (res.code == 1) {
                             $('.uname')
@@ -111,7 +114,6 @@
             };
             if ($(this).is('.email')) {
                 if (!regEmail.test(email)) {
-                    $('.email').focus();
                     $('.msg.two')
                         .html('邮箱地址格式有误').addClass('vali_fail');
                 } else {
@@ -121,7 +123,6 @@
             };
             if ($(this).is('.tel')) {
                 if (!regTel.test(tel)) {
-                    $('.tel').focus();
                     $('.msg.three')
                         .html('联系方式格式有误').addClass('vali_fail');
                 } else {
@@ -130,9 +131,7 @@
                 }
             }
             if ($(this).is('.upwd')) {
-                console.log(upwd);
                 if (!regUpwd.test(upwd)) {
-                    $('.upwd').focus();
                     $('.msg.four')
                         .html('密码格式有误').addClass('vali_fail');
                 } else {
@@ -141,7 +140,7 @@
                 }
             };
         })
-        .on("click", ".reg.btn", function() {
+        .on("click", ".reg.btn", function () {
             var uname = $('.uname.two').val(),
                 email = $('.email').val(),
                 tel = $('.tel').val(),
@@ -161,10 +160,10 @@
                     url: "http://localhost:3000/user/verifyUname",
                     type: "get",
                     data: { uname },
-                }).then(function(res) {
+                }).then(function (res) {
                     // verify database whether the uname exists
                     if (res.code == 1) {
-                        $('.uname')
+                        $('.uname').focus()
                             .siblings('.msg')
                             .addClass("vali_fail")
                             .html(res.msg);
@@ -212,18 +211,24 @@
                 data: { uname, email, tel, upwd, sex },
                 type: 'post'
             }).then((result) => {
+                $('.msg.six').html(result.msg);
                 if (result.code == -1) {
-                    $('.msg.six').html(result.msg);
-                    $('.register_frame').find('.msg').html(``);
+                    $('.register_frame')
+                        .find('.user').val(``)
+                        .siblings('.msg').html(``);
                     $('.uname.two').focus();
-                } else {
-                    $('.msg.six').html(result.msg + `3秒后跳转登录页面`);
                     setTimeout(() => {
-                        $('.login_frame').removeClass('collapse');
-                        $('.register_frame').addClass('.collapse');
+                        $('.resMsg').html(``)
+                    }, 1500)
+                } else {
+                    $('.msg.six').html(result.msg + `，3秒后跳转登录页面`);
+                    setTimeout(() => {
+                        $(".register_frame").addClass("collapse").find(".user").val(``);
+                        $(".login_frame").removeClass("collapse").find(".user").val(``).siblings('.msg').html(``).removeClass('vali_success vali_fail');
+                        $('.uname.one').focus();
                     }, 3000)
                 }
-                setTimeout($('.msg.six').html(``), 1500)
             })
         })
+
 })();

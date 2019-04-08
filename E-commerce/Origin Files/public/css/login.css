@@ -142,6 +142,11 @@
     color: #aaa;
     display: inline-block;
 }
+.msg.six{
+    height:30px;
+    width:370px;
+    line-height:30px;
+}
 
 /* regular expression check */
 

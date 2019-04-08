@@ -69,11 +69,30 @@
     /*******header icon-person click event*******/
     $(".mui-icon-person").click(() => {
         $(".log_container")
-            .removeClass("collapse")
+            .removeClass("collapse");
+            $('.msg').removeClass('vali_fail').removeClass('vali_success').html('');
     })
+
+
+    // pages toggle
     $('.navbar').on('click', '.navbar_item_link', function() {
         $(this).attr({
             href: "http://localhost:3000/productList.html"
         })
+    })
+
+    
+    // header ul_info
+    $(function () {
+        if (sessionStorage.uid) {
+            console.log($('.u_info li'));
+            $('.u_info li').first().html(`欢迎` + sessionStorage.uname+`<br><a href="javascript:;" class="logOut">退出</a>`);
+        }
+    })
+
+    // logout
+    $('.logOut').click(()=>{
+        sessionStorage.clear();
+        $('.u_info li').first().html(`<a href=" javascript:; " id=" icon-person "><span class=" mui-icon mui-icon-person "></span></a>`)
     })
 })()
