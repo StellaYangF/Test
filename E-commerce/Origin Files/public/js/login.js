@@ -61,7 +61,7 @@
                             setTimeout(() => {
                                 $('.log_container').addClass('collapse');
                             }, 3000)
-                            $('.u_info li').first().html(`欢迎` + uname + `<br><a href="javascript:;" class="logOut">退出</a>`)
+                            $('.u_info li').first().html(`欢迎` + uname )
                         }
                     })
                 }
