@@ -89,4 +89,9 @@
             $('.u_info li').first().html(`欢迎<br>` + sessionStorage.uname);
         }
     })
+
+    // header_logo_content event jump to index.html
+    $('.header_logo_content').click(function(){
+        $(this).attr({href:'http://localhost:3000/index.html'});
+    })
 })()

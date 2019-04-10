@@ -2,7 +2,7 @@ const express = require('express');
 const pool = require('../pool.js');
 var router = express.Router();
 
-// localhost:3000/product/list
+// localhost:3000/product/list?
 router.get('/list', (req, res) => {
     var $pno = req.query.pno,
         $psize = req.query.psize,
@@ -20,4 +20,25 @@ router.get('/list', (req, res) => {
         }
     })
 })
+
+// localhost:3000/product/details?pid=***
+router.get('/details', (req, res) => {
+    var $product_id = parseInt(req.query.pid),
+        sql = `SELECT epp.pid,epp.product_id,epp.sm,epp.md,epp.lg,ep.pname,ep.price FROM e_product_pic epp,e_products ep WHERE ep.pid=? AND epp.product_id=?`;
+    if (!$product_id) { 
+        res.send({ code: -1, msg: "该商品已下架" });
+        return;
+    };
+    pool.query(sql,[$product_id,$product_id],(err,result)=>{
+        if(err)throw err;
+        if(result.length>0){
+            res.send({code:1,msg:"查询成功",data:result})
+        }else{
+            res.send({code:-1,msg:'查询失败'})
+        }
+    })
+})
+
+
+
 module.exports = router;

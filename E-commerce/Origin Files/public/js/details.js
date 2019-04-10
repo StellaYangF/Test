@@ -19,59 +19,13 @@
                 <div class="pics_sm">
                     <span class="mui-icon mui-icon-arrowup prev"></span>
                     <div class="img_group">
-                        <img src="img/fashion/fashion_details/sm/shirt_sm_1.jpg" alt="1">
-                        <img src="img/fashion/fashion_details/sm/shirt_sm_2.jpg" alt="2">
-                        <img src="img/fashion/fashion_details/sm/shirt_sm_3.jpg" alt="3">
-                        <img src="img/fashion/fashion_details/sm/shirt_sm_4.jpg" alt="4">
-                        <img src="img/fashion/fashion_details/sm/shirt_sm_5.jpg" alt="5">
-                        <img src="img/fashion/fashion_details/sm/shirt_sm_5.jpg" alt="5">
                     </div>
                     <span class="mui-icon mui-icon-arrowdown next"></span>
                 </div>
                 <div class="pics_md">
-                    <img src="img/fashion/fashion_details/md/shirt_md_1.jpg" alt="1">
                 </div>
             </div>
             <ul class="details">
-                <li>參考 <span class="rfc">00113</span></li>
-                <li class="title">T恤</li>
-                <li class="stock">有现货</li>
-                <li class="price">¥25.99</li>
-                <li class="sz">
-                    <span>尺寸</span>
-                    <span class="mui-icon mui-icon-arrowdown"></span>
-                    <select name="size" id="psize">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                </li>
-                <li class="clr">
-                    <span class="color">颜色</span>
-                    <div>
-                        <span class="clr_white"></span>
-                        <span class="clr_red"></span>
-                    </div>
-                </li>
-                <li class="cnt">
-                    <div class="count">
-                        <input type="text" value="1">
-                        <span class="mui-icon mui-icon-arrowup plus"></span>
-                        <span class="mui-icon mui-icon-arrowdown minus"></span>
-                    </div>
-                    <button class="btn_cart">加入购物车</button>
-                </li>
-                <li class="tool">
-                    <span class=" mui-icon mui-icon-extra mui-icon-extra-heart" title="加入愿望清单"></span>
-                    <span class="mui-icon mui-icon-search" title="比较"></span>
-                </li>
-                <li class="share">
-                    <span class="mui-icon mui-icon-weibo" title="微博"></span>
-                    <span class="mui-icon mui-icon-weixin" title="微信"></span>
-                    <span class="mui-icon mui-icon-pengyouquan" title="朋友圈"></span>
-                    <span class="mui-icon mui-icon-chat" title="信息"></span>
-                </li>
             </ul>
         </div>
         <!-- third floor -->
@@ -215,42 +169,105 @@
     <footer></footer>`);
     $("body").prepend($elem);
 
-    // database get list
+    // get url params 
+    var pid = window.location.search.split('=')[1];
+    //according to url.params to show the product details
     $.ajax({
-            url: 'http://localhost:3000/product/list',
-            type: 'get',
-            dataType: 'json',
-            data: { pno: 1, psize: 8 }
-        }).then((res) => {
-            var list = res.data;
-            var html = '';
-            for (var item of list) {
-                html += `<li class="list_item"><a href="http://localhost:3000/productDetails.html?pid=${item.pid}"class="img_item img_bg "><img src=${item.img_front} 
+        url: 'http://localhost:3000/product/details',
+        data: { pid },
+        dataType: 'json',
+        type: 'get'
+    }).then((result) => {
+        var count = 0,
+            productList = result.data,
+            imgList = '',
+            imgMd = `<img src=${productList[0].lg} alt=${productList[0].pid}></img>`,
+            prdtDetails = `<li>參考 <span class="rfc">00113</span></li>
+            <li class="title">${productList[0].pname}</li>
+            <li class="stock">有现货</li>
+            <li class="price">¥${productList[0].price.toFixed(2)}</li>
+            <li class="sz">
+                <span>尺寸</span>
+                <span class="mui-icon mui-icon-arrowdown"></span>
+                <select name="size" id="psize">
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                </select>
+            </li>
+            <li class="clr">
+                <span class="color">颜色</span>
+                <div>
+                    <span class="clr_white"></span>
+                    <span class="clr_red"></span>
+                </div>
+            </li>
+            <li class="cnt">
+                <div class="count">
+                    <input type="text" value="1" class="countNum">
+                    <span class="mui-icon mui-icon-arrowup plus"></span>
+                    <span class="mui-icon mui-icon-arrowdown minus"></span>
+                </div>
+                <button class="btn_cart">加入购物车</button>
+            </li>
+            <li class="tool">
+                <span class=" mui-icon mui-icon-extra mui-icon-extra-heart" title="加入愿望清单"></span>
+                <span class="mui-icon mui-icon-search" title="比较"></span>
+            </li>
+            <li class="share">
+                <span class="mui-icon mui-icon-weibo" title="微博"></span>
+                <span class="mui-icon mui-icon-weixin" title="微信"></span>
+                <span class="mui-icon mui-icon-pengyouquan" title="朋友圈"></span>
+                <span class="mui-icon mui-icon-chat" title="信息"></span>
+            </li>`;
+        for (var item of productList) {
+            count++;
+            imgList += `<img src=${item.sm} alt=${count}>`
+        };
+        $('.img_group').html(imgList);
+        $('.pics_md').html(imgMd);
+        $('ul.details').html(prdtDetails);
+    })
+
+
+    //show more products
+    $.ajax({
+        url: 'http://localhost:3000/product/list',
+        type: 'get',
+        dataType: 'json',
+        data: { pno: 1, psize: 8 }
+    }).then((res) => {
+        var list = res.data;
+        var html = '';
+        for (var item of list) {
+            html += `<li class="list_item"><a href="http://localhost:3000/productDetails.html?pid=${item.pid}"class="img_item img_bg "><img src=${item.img_front} 
        data-imgFront=${item.img_front} data-imgBack=${item.img_back} alt=${item.pid} ></a><div class="card_body"><p class="pname"><a href="javascript:;">${item.pname}</a></p><p class="price">¥${item.price.toFixed(2)}</p><div class="tools"><a href="javascript:;"><span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span></a><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a><a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a></div></div></li>`
-            };
-            $('.feature_container.two').html(html)
-                // list_item hover event
-                .on('mouseenter', 'img', function() {
-                    var src = $(this).attr('data-imgBack');
-                    $(this).attr({ src })
-                })
-                .on('mouseleave', 'img', function() {
-                    var src = $(this).attr('data-imgFront');
-                    $(this).attr({ src })
-                });
-        })
-        // header ul_info
+        };
+        $('.feature_container.two').html(html)
+            // list_item hover event
+            .on('mouseenter', 'img', function () {
+                var src = $(this).attr('data-imgBack');
+                $(this).attr({ src })
+            })
+            .on('mouseleave', 'img', function () {
+                var src = $(this).attr('data-imgFront');
+                $(this).attr({ src })
+            });
+    })
+
+    // header ul_info
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
 
-    /***** products event *****/
+    //  products event 
     $(".prod_info")
-        .on("click", ".info", function() {
+        .on("click", ".info", function () {
             $(this).css({
-                    borderBottom: "2px solid rgb(203,170,149)",
-                    color: "#2F2C2F"
-                })
+                borderBottom: "2px solid rgb(203,170,149)",
+                color: "#2F2C2F"
+            })
                 .siblings().css({
                     color: "#BAB3B3",
                     borderBottom: "none"
@@ -269,4 +286,47 @@
                     .siblings().addClass("collapse")
             }
         })
+
+    // add/minus product btn event
+    $(window).load(() => {
+        var canClick = false,
+            num = $('.countNum').val();
+        colorChange();
+        $('.count').on('click', '.mui-icon', function () {
+            var btn = $(this);
+            if (btn.is('.mui-icon-arrowdown')) {
+                if (num > 1) {
+                    num--;
+                    $('.countNum').val(num);
+                }
+            }
+            if (btn.is('.mui-icon-arrowup')) {
+                canClick = true;
+                colorChange();
+                num++;
+                $('.countNum').val(num);
+            }
+        });
+
+        $('.countNum').change(function() {
+            console.log(111111);
+            if (num < 2) {
+                canClick = false;
+                colorChange();
+            } else {
+                canClick = true;
+                colorChange();
+            }
+        })
+
+        function colorChange() {
+            if (canClick) {
+                $('.count .mui-icon-arrowdown').removeClass('vali_grey');
+            } else {
+                $('.count .mui-icon-arrowdown').addClass('vali_grey');
+            }
+        }
+    })
+
+
 })()

@@ -276,6 +276,11 @@ section,
     border: none;
     color: #fff;
     background: rgb(244, 196, 185);
+    transition: .5s all ease;
+
+}
+.btn_cart:hover{
+    border:2px solid rgb(245, 172, 155);
 }
 
 .share span,
@@ -294,6 +299,7 @@ section,
     padding-bottom: 10px;
     transition: .5s all ease;
 }
+
 
 .info.one {
     border-bottom: 2px solid rgb(203, 170, 149);
@@ -432,4 +438,7 @@ section,
 
 .comments .com_order {
     width: 120px;
+}
+.vali_grey{
+    color:#BAB3B3;
 }
