@@ -85,7 +85,6 @@
     // header ul_info
     $(function() {
         if (sessionStorage.uid) {
-            console.log($('.u_info li'));
             $('.u_info li').first().html(`欢迎<br>` + sessionStorage.uname);
         }
     })

@@ -1,0 +1,48 @@
+<!--
+  Generated template for the IndexPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>index</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- 轮播图 -->
+  <ion-slides *ngIf='myList.length > 0' autoplay='2000' loop pager effect='slide' speed=1500 paginationType='bullets'
+    style='height:200px'>
+    <ion-slide *ngFor='let item of myList'>
+      <!-- <img src="../../assets/{{item.img}}" alt="item.cid"> -->
+      <img [src]="'../../assets/'+item.img" alt="item.cid">
+    </ion-slide>
+  </ion-slides>
+
+  <!-- 显示一个支持横向滚动的容器，里面是卡片 -->
+  <ion-scroll scrollX style='height:300px;white-space: nowrap;'>
+    <ion-card *ngFor='let item of arrList' style='display:inline-block;'>
+      <ion-card-content>
+        <img src="../../assets/{{item.pic}}" alt="item.pid" style='height:150px'>
+        <h2>{{item.title}}</h2>
+        <p>{{item.details}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-scroll>
+
+  <!-- 缩略图空列表 -->
+  <ion-list>
+    <ion-item *ngFor='let item of rcmdList' text-wrap (click)='jump(item.href.split("=").slice(1))'>
+      <ion-thumbnail item-start>
+        <img src="../../assets/{{item.pic}}" alt="item.pid">
+      </ion-thumbnail>
+      <h3>{{item.title}}</h3>
+      <p>{{item.details}}</p>
+      <button ion-button clear item-end>
+        <ion-icon name='cart' style='color:bisque'></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

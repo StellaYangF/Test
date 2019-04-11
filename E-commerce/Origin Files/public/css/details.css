@@ -86,7 +86,7 @@ section,
     background: rgb(250, 248, 242);
 }
 
-.pics_sm span {
+.prev,.next {
     left: 60px;
     width: 100px;
     height: 24px;
@@ -121,7 +121,7 @@ section,
     z-index: -1;
 }
 
-.pics_sm span,
+.prev,.next,
 .img_group img,
 .clr_white,
 .clr_red,
@@ -277,10 +277,13 @@ section,
     color: #fff;
     background: rgb(244, 196, 185);
     transition: .5s all ease;
+    font-size: 18px;
 
 }
 .btn_cart:hover{
     border:2px solid rgb(245, 172, 155);
+    background:#fff;
+    color:rgb(245, 172, 155);
 }
 
 .share span,
@@ -299,7 +302,6 @@ section,
     padding-bottom: 10px;
     transition: .5s all ease;
 }
-
 
 .info.one {
     border-bottom: 2px solid rgb(203, 170, 149);
@@ -439,6 +441,19 @@ section,
 .comments .com_order {
     width: 120px;
 }
-.vali_grey{
+.vali_grey,.vali_grey:hover{
     color:#BAB3B3;
 }
+.vali_grey{
+    cursor:default;
+}
+
+.img_group img:hover{
+    background:none;
+}
+
+.unClick{
+    color:#ddd;
+    cursor: default;
+}
+.unClick:hover{color:#ddd};

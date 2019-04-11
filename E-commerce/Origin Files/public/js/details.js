@@ -20,7 +20,7 @@
                     <span class="mui-icon mui-icon-arrowup prev"></span>
                     <div class="img_group">
                     </div>
-                    <span class="mui-icon mui-icon-arrowdown next"></span>
+                    <span class="mui-icon mui-icon-arrowdown next unClick"></span>
                 </div>
                 <div class="pics_md">
                 </div>
@@ -206,8 +206,8 @@
             <li class="cnt">
                 <div class="count">
                     <input type="text" value="1" class="countNum">
-                    <span class="mui-icon mui-icon-arrowup plus"></span>
-                    <span class="mui-icon mui-icon-arrowdown minus"></span>
+                    <span class="mui-icon mui-icon-arrowup plus "></span>
+                    <span class="mui-icon mui-icon-arrowdown minus vali_grey"></span>
                 </div>
                 <button class="btn_cart">加入购物车</button>
             </li>
@@ -223,7 +223,7 @@
             </li>`;
         for (var item of productList) {
             count++;
-            imgList += `<img src=${item.sm} alt=${count}>`
+            imgList += `<img src=${item.sm} alt=${count} data-lg=${item.lg}>`
         };
         $('.img_group').html(imgList);
         $('.pics_md').html(imgMd);
@@ -289,44 +289,52 @@
 
     // add/minus product btn event
     $(window).load(() => {
-        var canClick = false,
-            num = $('.countNum').val();
-        colorChange();
-        $('.count').on('click', '.mui-icon', function () {
-            var btn = $(this);
-            if (btn.is('.mui-icon-arrowdown')) {
-                if (num > 1) {
-                    num--;
-                    $('.countNum').val(num);
-                }
-            }
-            if (btn.is('.mui-icon-arrowup')) {
-                canClick = true;
-                colorChange();
-                num++;
-                $('.countNum').val(num);
-            }
-        });
-
-        $('.countNum').change(function() {
-            console.log(111111);
-            if (num < 2) {
-                canClick = false;
-                colorChange();
-            } else {
-                canClick = true;
-                colorChange();
-            }
-        })
-
-        function colorChange() {
-            if (canClick) {
-                $('.count .mui-icon-arrowdown').removeClass('vali_grey');
-            } else {
-                $('.count .mui-icon-arrowdown').addClass('vali_grey');
+        //var canClick = false,
+        var num = $('.countNum').val();
+        $('.mui-icon-arrowup').click(() => {
+            num++;
+            $('.countNum').val(num);
+            $('.mui-icon-arrowdown').removeClass('vali_grey')
+        }
+        )
+        $('.mui-icon-arrowdown').click(() => {
+            if (num > 1) { num--; }
+            $('.countNum').val(num);
+            if (num == 1) {
+                $('.mui-icon-arrowdown').addClass('vali_grey')
             }
         }
+        )
+        // small image click event
+        $('.img_group').on('click', 'img', function () {
+            var src = $(this).attr('data-lg');
+            $('.pics_md img').attr({ src });
+        })
+
+        //small pictures prev next click event
+        var len = $('.img_group img').length,
+            long = $('.img_group').css('height').replace('px', ''),
+            step = long / len,
+            timesUp = 0,
+            timesDown = 0,
+            marginBottom = timesDown * step + 'px';
+        if (len < 6) {
+            $('.mui-icon-arrowup.prev').addClass('unClick')
+        } else {
+            $('.mui-icon-arrowup.prev').click(() => {
+                len - timesUp == 5 ? timesUp : timesUp++;
+                marginTop = -timesUp * step + 'px',
+                    $('.img_group').css({ marginTop });
+                $('.mui-icon-arrowdown.next').removeClass('unClick')
+                if (len - timesUp == 5) {
+                    $('.mui-icon-arrowup.prev').addClass('unClick');
+                }
+            })
+        }
+        $('.mui-icon-arrowdown.next').click(() => {
+            if ($(this).is('.unClick')) {
+
+            }
+        })
     })
-
-
 })()
