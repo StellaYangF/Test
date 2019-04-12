@@ -32,7 +32,9 @@
         // btn.login
         .on("click", ".btn.login", () => {
             var uname = $(".uname").val(),
-                upwd = $(".upwd").val();
+                upwd = $(".upwd").val(),
+                timer=null,
+                count=3;
             if (!uname) {
                 $('.uname.one').focus().siblings('.msg').html('用户名不能为空');
             } else {
@@ -57,10 +59,14 @@
                         } else {
                             sessionStorage.setItem('uid', result.data);
                             sessionStorage.setItem('uname', uname);
-                            $('.resMsg').html(result.msg + `，3秒后跳转登购买页`);
+                            timer=setInterval(()=>{
+                                $('.resMsg').html(result.msg + `，${count}秒后跳转登购买页`);
+                                count--;
+                            },1000)
                             setTimeout(() => {
+                                clearInterval(timer);
                                 $('.log_container').addClass('collapse');
-                            }, 3000)
+                            }, 4000)
                             $('.u_info li').first().html(`欢迎` + uname )
                         }
                     })

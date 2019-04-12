@@ -17,13 +17,16 @@
         <div class="second_floor">
             <div class="pics">
                 <div class="pics_sm">
-                    <span class="mui-icon mui-icon-arrowup prev"></span>
+                    <span class="mui-icon mui-icon-arrowup prev unClick"></span>
                     <div class="img_group">
                     </div>
-                    <span class="mui-icon mui-icon-arrowdown next unClick"></span>
+                    <span class="mui-icon mui-icon-arrowdown next"></span>
                 </div>
-                <div class="pics_md">
+                <div class="pics_md"></div>
+                <div class="maskContainer">
+                    <div class="mask collapse"></div>
                 </div>
+                <div class="zoomContainer"></div>
             </div>
             <ul class="details">
             </ul>
@@ -181,6 +184,7 @@
         var count = 0,
             productList = result.data,
             imgList = '',
+            backgroundImage=`url(${productList[0].lg})`,
             imgMd = `<img src=${productList[0].lg} alt=${productList[0].pid}></img>`,
             prdtDetails = `<li>參考 <span class="rfc">00113</span></li>
             <li class="title">${productList[0].pname}</li>
@@ -221,6 +225,7 @@
                 <span class="mui-icon mui-icon-pengyouquan" title="朋友圈"></span>
                 <span class="mui-icon mui-icon-chat" title="信息"></span>
             </li>`;
+            $('.mask').css({backgroundImage});
         for (var item of productList) {
             count++;
             imgList += `<img src=${item.sm} alt=${count} data-lg=${item.lg}>`
@@ -242,7 +247,7 @@
         var html = '';
         for (var item of list) {
             html += `<li class="list_item"><a href="http://localhost:3000/productDetails.html?pid=${item.pid}"class="img_item img_bg "><img src=${item.img_front} 
-       data-imgFront=${item.img_front} data-imgBack=${item.img_back} alt=${item.pid} ></a><div class="card_body"><p class="pname"><a href="javascript:;">${item.pname}</a></p><p class="price">¥${item.price.toFixed(2)}</p><div class="tools"><a href="javascript:;"><span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span></a><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a><a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a></div></div></li>`
+       data-imgFront=${item.img_front} data-imgBack=${item.img_back} alt=${item.pid} ></a><div class="card_body"><p class="pname"><a href="javascript:;">${item.pname}</a></p><p class="price">¥${item.price.toFixed(2)}</p><div class="tools"><a href="javascript:;"><span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span></a><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a><a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a></div></div></li>`;
         };
         $('.feature_container.two').html(html)
             // list_item hover event
@@ -291,50 +296,67 @@
     $(window).load(() => {
         //var canClick = false,
         var num = $('.countNum').val();
-        $('.mui-icon-arrowup').click(() => {
+        $('.mui-icon-arrowup.plus').click(() => {
             num++;
             $('.countNum').val(num);
-            $('.mui-icon-arrowdown').removeClass('vali_grey')
+            $('.mui-icon-arrowdown.minus').removeClass('vali_grey')
         }
         )
-        $('.mui-icon-arrowdown').click(() => {
+        $('.mui-icon-arrowdown.minus').click(function () {
             if (num > 1) { num--; }
             $('.countNum').val(num);
             if (num == 1) {
-                $('.mui-icon-arrowdown').addClass('vali_grey')
+                $(this).addClass('vali_grey')
             }
         }
         )
         // small image click event
         $('.img_group').on('click', 'img', function () {
-            var src = $(this).attr('data-lg');
+            var src = $(this).attr('data-lg'),
+                backgroundImage = `url(${src})`;
             $('.pics_md img').attr({ src });
+            $('.mask').css({ backgroundImage })
         })
 
         //small pictures prev next click event
         var len = $('.img_group img').length,
             long = $('.img_group').css('height').replace('px', ''),
             step = long / len,
-            timesUp = 0,
-            timesDown = 0,
-            marginBottom = timesDown * step + 'px';
+            moved = 0,
+            marginTop = '';
         if (len < 6) {
-            $('.mui-icon-arrowup.prev').addClass('unClick')
+            $('.mui-icon-arrowdown.next').addClass('unClick')
         } else {
-            $('.mui-icon-arrowup.prev').click(() => {
-                len - timesUp == 5 ? timesUp : timesUp++;
-                marginTop = -timesUp * step + 'px',
-                    $('.img_group').css({ marginTop });
-                $('.mui-icon-arrowdown.next').removeClass('unClick')
-                if (len - timesUp == 5) {
-                    $('.mui-icon-arrowup.prev').addClass('unClick');
+            $('.mui-icon-arrowdown.next').click(function () {
+                len - moved == 5 ? moved : moved++;
+                marginTop = -moved * step + 'px';
+                $('.img_group').css({ marginTop });
+                $('.mui-icon-arrowup.prev').removeClass('unClick')
+                if (len - moved == 5) {
+                    $(this).addClass('unClick');
                 }
             })
         }
-        $('.mui-icon-arrowdown.next').click(() => {
-            if ($(this).is('.unClick')) {
-
+        $('.mui-icon-arrowup.prev').click(function () {
+            if (!$(this).is('.unClick')) {
+                if (moved == 0) {
+                    $(this).addClass('unClick');
+                } else {
+                    moved--;
+                    $('.mui-icon-arrowdown.next').removeClass('unClick');
+                }
             }
+            marginTop = -moved * step + 'px';
+            $('.img_group').css({ marginTop });
         })
+    })
+    $('.zoomContainer').hover(() => {
+        $('.mask').toggleClass('collapse');
+    }).mousemove(function (e) {
+        var left = e.offsetX - 150,
+            top = e.offsetY - 150,
+            backgroundPosition = `${-left * 1.5}px ${-top * 1.35}px`;
+        $('.mask').css({ left, top });
+        $('.mask').css({ backgroundPosition })
     })
 })()
