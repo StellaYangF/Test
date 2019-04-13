@@ -215,3 +215,8 @@ option {
 .list>span:last-child{
     width:20px;
 }
+
+.selected{
+    color:#fff;
+    background: #929292;
+}

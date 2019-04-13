@@ -57,7 +57,7 @@
                     <div class="card_item_two">
                         <p><a href="javascript:;" class="title">Zara OVERSIZED PARKA</a></p>
                         <p class="desc">Fashion has always been so temporary and uncertain....</p>
-                        <p class="price sm">$20.79</p>
+                        <p class="price sm">¥20.79</p>
                     </div>
                 </div>
                 <div class="card">
@@ -67,7 +67,7 @@
                     <div class="card_item_two">
                         <p><a href="javascript:;" class="title">Zara OVERSIZED PARKA</a></p>
                         <p class="desc">Fashion has always been so temporary and uncertain....</p>
-                        <p class="price sm">$20.79</p>
+                        <p class="price sm">¥20.79</p>
                     </div>
                 </div>
                 <div class="card">
@@ -77,7 +77,7 @@
                     <div class="card_item_two">
                         <p><a href="javascript:;" class="title">Zara OVERSIZED PARKA</a></p>
                         <p class="desc">Fashion has always been so temporary and uncertain....</p>
-                        <p class="price sm">$20.79</p>
+                        <p class="price sm">¥20.79</p>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,13 @@
                         </select>
                         <span class="mui-icon mui-icon-arrowdown"></span>
                     </div>
-                    <span class="show_list">Showing 1-12 of 31 item(s)</span>
+                    <div class="btn_page">
+                    <button class="prev"><span class="mui-icon mui-icon-arrowleft"></span></button>
+                    <button class="pageOne">1</button>
+                    <button class="pageTwo">2</button>
+                    <button class="pageThree">3</button>
+                    <button class="next"><span class="mui-icon mui-icon-arrowright"></span></button>
+                </div>
                 </div>
             </div>
     <!-- product list -->
@@ -118,11 +124,11 @@
                 </div>
                 <!-- btn_item -->
                 <div class="btn_page">
-                    <button><span class="mui-icon mui-icon-arrowleft"></span></button>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button><span class="mui-icon mui-icon-arrowright"></span></button>
+                    <button class="prev"><span class="mui-icon mui-icon-arrowleft"></span></button>
+                    <button class="pageOne">1</button>
+                    <button class="pageTwo">2</button>
+                    <button class="pageThree">3</button>
+                    <button class="next"><span class="mui-icon mui-icon-arrowright"></span></button>
                 </div>
             </div>
         </div>
@@ -132,29 +138,35 @@
     <footer></footer>`);
     $("body").prepend($elem);
 
-    // database get list
-    $.ajax({
-        url: 'http://localhost:3000/product/list',
-        type: 'get',
-        dataType: 'json',
-    }).then((res) => {
-        var list = res.data;
-        var html = '';
-        for (var item of list) {
-            html += `<li class="list_item"><a href="http://localhost:3000/productDetails.html?pid=${item.pid}"class="img_item img_bg "><img src=${item.img_front} data-imgFront=${item.img_front} data-imgBack=${item.img_back} alt=${item.pid} ></a><div class="card_body"><p class="pname"><a href="javascript:;">${item.pname}</a></p><p class="price">¥${item.price.toFixed(2)}</p><div class="tools"><a href="javascript:;"><span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span></a><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a><a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a></div></div></li>`
-        };
-        $('.feature_container.two')
-            .html(html)
-            // list_item hover event
-            .on('mouseenter', 'img', function() {
-                var src = $(this).attr('data-imgBack');
-                $(this).attr({ src })
-            })
-            .on('mouseleave', 'img', function() {
-                var src = $(this).attr('data-imgFront');
-                $(this).attr({ src })
-            });
-    })
+    // database get list并封装函数多次调用
+    function getList(pno = 1) {
+        $.ajax({
+            url: 'http://localhost:3000/product/list',
+            data: { pno },
+            type: 'get',
+            dataType: 'json',
+        }).then((res) => {
+            var list = res.data;
+            var html = '';
+            for (var item of list) {
+                html += `<li class="list_item"><a href="http://localhost:3000/productDetails.html?pid=${item.pid}"class="img_item img_bg "><img src=${item.img_front} data-imgFront=${item.img_front} data-imgBack=${item.img_back} alt=${item.pid} ></a><div class="card_body"><p class="pname"><a href="javascript:;">${item.pname}</a></p><p class="price">¥${item.price.toFixed(2)}</p><div class="tools"><a href="javascript:;"><span class=" mui-icon mui-icon-extra mui-icon-extra-heart"></span></a><a href="javascript:;"><span class="mui-icon mui-icon-search"></span></a><a id="icon-gear" href="javascript:;"><span class="mui-icon mui-icon-gear"></span></a></div></div></li>`
+            };
+            $('.feature_container.two')
+                .html(html)
+                // list_item hover event
+                .on('mouseenter', 'img', function () {
+                    var alt = $(this).attr('alt');
+                    if (alt < 21) {
+                        var src = $(this).attr('data-imgBack');
+                        $(this).attr({ src })
+                    }
+                })
+                .on('mouseleave', 'img', function () {
+                    var src = $(this).attr('data-imgFront');
+                    $(this).attr({ src })
+                });
+        })
+    }
 
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
@@ -162,7 +174,7 @@
 
     /***** nav arrow event *****/
     $(".nav_content")
-        .on("mouseenter", 'li', function() {
+        .on("mouseenter", 'li', function () {
             $(this)
                 .css({
                     color: "#F9DEAA"
@@ -172,7 +184,7 @@
                     transform: "translate(5px)"
                 })
         })
-        .on("mouseleave", 'li', function() {
+        .on("mouseleave", 'li', function () {
             $(this)
                 .css({
                     color: "#fff"
@@ -184,7 +196,7 @@
         })
 
     /***** sort css setting*****/
-    $("select").on("hover", "option", function() {
+    $("select").on("hover", "option", function () {
         $(this).css({
             color: "#EA9191",
             background: "#fff"
@@ -192,9 +204,86 @@
     })
 
     // home_link
-    $('.home_link').click(function() {
+    $('.home_link').click(function () {
         $(this).attr({
             href: 'http://localhost:3000/products.html'
         });
+    });
+
+    $(window).load(() => {
+        // 初始默认显示第一页工12个商品
+        getList();
+        // 保存页码所对应pno
+        var pno = 1;
+        // 翻页/选择页面按钮事件
+        // 上一页初始化禁用
+        $('.prev').prop('disabled', true)
+            // 默认第一页选中
+            .next('button').addClass('selected');
+        // 按钮点击事件
+        $('.btn_page').on('click', 'button', function () {
+            var btn = $(this);
+            // 点击下一页pno++,，并调用页面更新
+            if (btn.is('.next')) {
+                $('.prev').prop('disabled', false);
+                pno++;
+                getList(pno);
+                if (pno == 2) {
+                    $('.pageTwo').addClass('selected').siblings()
+                        .removeClass('selected');
+                }
+                if (pno == 3) {
+                    $('.pageThree').addClass('selected').siblings()
+                        .removeClass('selected');
+                    $('.next').prop('disabled', true);
+                    return;
+                }
+            }
+            // 点击上一页pno--
+            if (btn.is('.prev')) {
+                $('.next').prop('disabled', false);
+                pno--;
+                getList(pno);
+                if (pno == 2) {
+                    $('.pageTwo').addClass('selected').siblings()
+                        .removeClass('selected');
+                }
+                if (pno == 1) {
+                    $('.pageOne').addClass('selected').siblings()
+                        .removeClass('selected');
+                    $('.prev').prop('disabled', true);
+                    return;
+                }
+            }
+            // 点击页码1显示
+            if (btn.is('.pageOne')) {
+                if (pno != 1) {
+                    pno = 1;
+                    $('.pageOne').addClass('selected').siblings().removeClass('selected');
+                    getList();
+                    $('.next').prop('disabled',false);
+                    $('.prev').prop('disabled',true)
+                }
+            }
+            // 点击页面2
+            if(btn.is('.pageTwo')){
+                if (pno != 2) {
+                    pno = 2;
+                    $('.pageTwo').addClass('selected').siblings().removeClass('selected');
+                    getList(pno);
+                    $('.next').prop('disabled',false)
+                }
+            }            
+            // 点击页面3
+            if(btn.is('.pageThree')){
+                if (pno != 3) {
+                    pno = 3;
+                    $('.pageThree').addClass('selected').siblings().removeClass('selected');
+                    getList(pno);
+                    $('.next').prop('disabled',true);
+                    $('.prev').prop('disabled',false)
+                }
+            }
+        })
     })
 })()

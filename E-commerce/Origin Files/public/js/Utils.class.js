@@ -34,23 +34,12 @@ class Utils {
             overflow: "hidden"
         });
 
-        var moved = 1,
-            size = iWidth.replace("px", "");
         setInterval(() => {
-            var marginLeft = `-${moved * size}px`;
-            if (moved < count) {
-                $(".carousel_group")
-                    .animate({
-                        marginLeft
-                    }, 300);
-                moved++;
-            } else {
-                $(".carousel_group")
-                    .css({
-                        marginLeft: 0
-                    });
-                moved = 0;
-            }
+            $(".carousel_group").animate({ marginLeft:'-1500px' }, 800, () => {
+                $('.carousel_item:first').appendTo('.carousel_group');
+                $('.carousel_group')
+                    .css({ marginLeft: 0 })
+            })
         }, time)
     }
 

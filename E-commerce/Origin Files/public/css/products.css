@@ -37,7 +37,7 @@
     display: inline-block;
 }
 
-.img_hover, .line, .tools {
+.img_hover, .line, .tools{
     transition: .5s all ease
 }
 
@@ -376,4 +376,8 @@
 .tools .mui-icon:hover {
     color: #000;
     font-weight: 700;
+}
+.left.noHover:hover,.right.noHover:hover{
+    color:#C6C4C4;
+    background: #F4F3F1;
 }

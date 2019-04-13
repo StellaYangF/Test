@@ -19,9 +19,6 @@
             <!-- <li class=" carousel_item " <li class=" carousel_item ">
                 <a href=" javascript:; " class=" carousel_item_link "><img src=" img/eifini/fashion_slide4.jpg" alt=" fashion_slide1.jpg "></a>
             </li> -->
-            <li class=" carousel_item ">
-                <a href=" javascript:; " class=" carousel_item_link "><img src=" img/eifini/fashion_slide1.jpg " alt=" fashion_slide3.jpg "></a>
-            </li>
         </ul>
         <div class="btn_group ">
             <button class="prev ">&lt;</button>
@@ -57,26 +54,26 @@
     <!-- second floor -->
     <div class=" second_floor ">
         <div class="btn_group btn1 ">
-            <button class="prev ">&lt;</button>
-            <button class="next ">&gt;</button>
+            <button class="prev left">&lt;</button>
+            <button class="next right">&gt;</button>
         </div>
         <div class="container ">
             <div class="lb_group ">
-                <div class="lb_item ">
+                <div class="lb_item one">
                     <img src="img/fashion/fashion_home/lookbook1.jpg " alt="1">
                     <div class="lb_content ">
                         <h3>你的夏日形象</h3>
                         <P>打造你的时尚夏日形象！</P>
                     </div>
                 </div>
-                <div class="lb_item ">
+                <div class="lb_item two" >
                     <img src="img/fashion/fashion_home/lookbook2.jpg " alt="2">
                     <div class="lb_content ">
                         <h3>创造你自己的风格</h3>
                         <P>穿上我们的新款休闲系列，成为更棒的自己！</P>
                     </div>
                 </div>
-                <div class="lb_item ">
+                <div class="lb_item three" >
                     <img src="img/fashion/fashion_home/lookbook3.jpg " alt="3">
                     <div class="lb_content ">
                         <h3>多彩衣服选择</h3>
@@ -87,16 +84,16 @@
         </div>
         <ul class=" rcontainer ">
             <li class="img_item "><a href="javascript:; ">
-                <img src=" img/fashion/fashion_home/lookbook1_1.jpg " alt="1 " class="img_hover">
+                <img src=" img/fashion/fashion_home/lookbook1_1.jpg " alt="1 " class="img_hover one">
             </a></li>
             <li class="img_item "><a href="javascript:; ">
-                <img src=" img/fashion/fashion_home/lookbook1_2.jpg " alt="2 " class="img_hover">
+                <img src=" img/fashion/fashion_home/lookbook1_2.jpg " alt="2 " class="img_hover two">
             </a></li>
             <li class="img_item "><a href="javascript:; ">
-                <img src=" img/fashion/fashion_home/lookbook1_3.jpg " alt="3 " class="img_hover">
+                <img src=" img/fashion/fashion_home/lookbook1_3.jpg " alt="3 " class="img_hover three">
             </a></li>
             <li class="img_item "><a href="javascript:; ">
-                <img src=" img/fashion/fashion_home/lookbook1_4.jpg " alt="4 " class="img_hover">
+                <img src=" img/fashion/fashion_home/lookbook1_4.jpg " alt="4 " class="img_hover four">
             </a></li>
         </ul>
     </div>
@@ -235,11 +232,11 @@
         };
         $('.feature_container.two').html(html)
             // list_item hover event
-            .on('mouseenter', 'img', function() {
+            .on('mouseenter', 'img', function () {
                 var src = $(this).attr('data-imgBack');
                 $(this).attr({ src })
             })
-            .on('mouseleave', 'img', function() {
+            .on('mouseleave', 'img', function () {
                 var src = $(this).attr('data-imgFront');
                 $(this).attr({ src })
             });
@@ -252,7 +249,69 @@
 
     /*****window load finished then invoke the slide*******/
     $(window).load(() => {
-        Utils.slide(5000)
+        Utils.slide(6000)
+        // 轮播上下页按钮
+        $('.prev').click(() => {
+            $('.carousel_group')
+                .animate({ marginLeft: '-1500px' }, 800, () => {
+                    $('.carousel_item:first').appendTo('.carousel_group');
+                    $('.carousel_group')
+                        .css({ marginLeft: 0 })
+                })
+        })
+        // .next
+        $('.next').click(() => {
+            $('.carousel_group').prepend($('.carousel_item:last'))
+                .css({ marginLeft: '-1500px' })
+                .animate({ marginLeft: 0 }, 800)
+        })
+
+        // 夏日新品左右按钮滑动效果
+        var moved = 1,
+            marginLeft;
+        $('.left').prop('disabled', true).addClass('noHover')
+        $('.right').click(() => {
+            marginLeft = -moved * 1000 + 'px';
+            moved++;
+            $('.lb_group ').animate({ marginLeft }, 800, () => {
+                if (moved == 2) {
+                    $('.left').prop('disabled', false).removeClass('noHover')
+                    $('.img_hover.one').attr({ src: `img/fashion/fashion_home/lookbook${moved}_1.jpg ` });
+                    $('.img_hover.two').attr({ src: `img/fashion/fashion_home/lookbook${moved}_2.jpg ` });
+                    $('.img_hover.three').attr({ src: `img/fashion/fashion_home/lookbook${moved}_3.jpg ` });
+                    $('.img_hover.four').attr({ src: `img/fashion/fashion_home/lookbook${moved}_4.jpg ` });
+                }
+                if (moved == 3) {
+                    $('.right').prop('disabled', true).addClass('noHover');
+                    $('.img_hover.one').attr({ src: `img/fashion/fashion_home/lookbook${moved}_1.jpg ` });
+                    $('.img_hover.two').attr({ src: `img/fashion/fashion_home/lookbook${moved}_2.jpg ` });
+                    $('.img_hover.three').attr({ src: `img/fashion/fashion_home/lookbook${moved}_3.jpg ` });
+                    $('.img_hover.four').attr({ src: `img/fashion/fashion_home/lookbook${moved}_4.jpg ` });
+                }
+            })
+        })
+
+        $('.left').click(() => {
+            moved--;
+            marginLeft = -(moved-1) * 1000 + 'px';
+            $('.lb_group ').animate({ marginLeft }, 800, () => {
+                if (moved == 2) {
+                    $('.right').prop('disabled', false).removeClass('noHover')
+                    $('.img_hover.one').attr({ src: `img/fashion/fashion_home/lookbook${moved}_1.jpg ` });
+                    $('.img_hover.two').attr({ src: `img/fashion/fashion_home/lookbook${moved}_2.jpg ` });
+                    $('.img_hover.three').attr({ src: `img/fashion/fashion_home/lookbook${moved}_3.jpg ` });
+                    $('.img_hover.four').attr({ src: `img/fashion/fashion_home/lookbook${moved}_4.jpg ` });
+                }
+                if (moved == 1) {
+                    $('.left').prop('disabled', true).addClass('noHover');
+                    $('.img_hover.one').attr({ src: `img/fashion/fashion_home/lookbook${moved}_1.jpg ` });
+                    $('.img_hover.two').attr({ src: `img/fashion/fashion_home/lookbook${moved}_2.jpg ` });
+                    $('.img_hover.three').attr({ src: `img/fashion/fashion_home/lookbook${moved}_3.jpg ` });
+                    $('.img_hover.four').attr({ src: `img/fashion/fashion_home/lookbook${moved}_4.jpg ` });
+                }
+            })
+        })
+
     });
 
     /***** fifth floor card_container hover  *****/
