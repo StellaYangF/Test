@@ -169,7 +169,8 @@
             <ul class="feature_container two"></ul>
         </div>
     </section>
-    <footer></footer>`);
+    <footer></footer>
+    <div class='cartContainer collapse'></div>`);
     $("body").prepend($elem);
 
     // get url params 
@@ -184,7 +185,7 @@
         var count = 0,
             productList = result.data,
             imgList = '',
-            backgroundImage=`url(${productList[0].lg})`,
+            backgroundImage = `url(${productList[0].lg})`,
             imgMd = `<img src=${productList[0].lg} alt=${productList[0].pid}></img>`,
             prdtDetails = `<li>參考 <span class="rfc">00113</span></li>
             <li class="title">${productList[0].pname}</li>
@@ -225,7 +226,7 @@
                 <span class="mui-icon mui-icon-pengyouquan" title="朋友圈"></span>
                 <span class="mui-icon mui-icon-chat" title="信息"></span>
             </li>`;
-            $('.mask').css({backgroundImage});
+        $('.mask').css({ backgroundImage });
         for (var item of productList) {
             count++;
             imgList += `<img src=${item.sm} alt=${count} data-lg=${item.lg}>`
@@ -251,11 +252,11 @@
         };
         $('.feature_container.two').html(html)
             // list_item hover event
-            .on('mouseenter', 'img', function () {
+            .on('mouseenter', 'img', function() {
                 var src = $(this).attr('data-imgBack');
                 $(this).attr({ src })
             })
-            .on('mouseleave', 'img', function () {
+            .on('mouseleave', 'img', function() {
                 var src = $(this).attr('data-imgFront');
                 $(this).attr({ src })
             });
@@ -265,14 +266,15 @@
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
+    Utils.importHtml(EnvInfo.cartUrl, EnvInfo.cartHtml)
 
     //  products event 
     $(".prod_info")
-        .on("click", ".info", function () {
+        .on("click", ".info", function() {
             $(this).css({
-                borderBottom: "2px solid rgb(203,170,149)",
-                color: "#2F2C2F"
-            })
+                    borderBottom: "2px solid rgb(203,170,149)",
+                    color: "#2F2C2F"
+                })
                 .siblings().css({
                     color: "#BAB3B3",
                     borderBottom: "none"
@@ -300,18 +302,16 @@
             num++;
             $('.countNum').val(num);
             $('.mui-icon-arrowdown.minus').removeClass('vali_grey')
-        }
-        )
-        $('.mui-icon-arrowdown.minus').click(function () {
-            if (num > 1) { num--; }
-            $('.countNum').val(num);
-            if (num == 1) {
-                $(this).addClass('vali_grey')
-            }
-        }
-        )
-        // small image click event
-        $('.img_group').on('click', 'img', function () {
+        })
+        $('.mui-icon-arrowdown.minus').click(function() {
+                if (num > 1) { num--; }
+                $('.countNum').val(num);
+                if (num == 1) {
+                    $(this).addClass('vali_grey')
+                }
+            })
+            // small image click event
+        $('.img_group').on('click', 'img', function() {
             var src = $(this).attr('data-lg'),
                 backgroundImage = `url(${src})`;
             $('.pics_md img').attr({ src });
@@ -327,7 +327,7 @@
         if (len < 6) {
             $('.mui-icon-arrowdown.next').addClass('unClick')
         } else {
-            $('.mui-icon-arrowdown.next').click(function () {
+            $('.mui-icon-arrowdown.next').click(function() {
                 len - moved == 5 ? moved : moved++;
                 marginTop = -moved * step + 'px';
                 $('.img_group').css({ marginTop });
@@ -337,7 +337,7 @@
                 }
             })
         }
-        $('.mui-icon-arrowup.prev').click(function () {
+        $('.mui-icon-arrowup.prev').click(function() {
             if (!$(this).is('.unClick')) {
                 if (moved == 0) {
                     $(this).addClass('unClick');
@@ -352,11 +352,17 @@
     })
     $('.zoomContainer').hover(() => {
         $('.mask').toggleClass('collapse');
-    }).mousemove(function (e) {
+    }).mousemove(function(e) {
         var left = e.offsetX - 150,
             top = e.offsetY - 150,
             backgroundPosition = `${-left * 1.5}px ${-top * 1.35}px`;
         $('.mask').css({ left, top });
         $('.mask').css({ backgroundPosition })
+    })
+
+    $('.home_link').click(function() {
+        $(this).attr({
+            href: 'http://localhost:3000/products.html'
+        })
     })
 })()

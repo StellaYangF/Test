@@ -214,7 +214,8 @@
                 </ul>
     </div>
     <!-- import footer  -->
-    <footer></footer>`);
+    <footer></footer>
+    <div class='cartContainer collapse'></div>`);
     $("body").prepend($elem);
 
     // database get list
@@ -232,11 +233,11 @@
         };
         $('.feature_container.two').html(html)
             // list_item hover event
-            .on('mouseenter', 'img', function () {
+            .on('mouseenter', 'img', function() {
                 var src = $(this).attr('data-imgBack');
                 $(this).attr({ src })
             })
-            .on('mouseleave', 'img', function () {
+            .on('mouseleave', 'img', function() {
                 var src = $(this).attr('data-imgFront');
                 $(this).attr({ src })
             });
@@ -245,21 +246,22 @@
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
+    Utils.importHtml(EnvInfo.cartUrl, EnvInfo.cartHtml)
 
 
     /*****window load finished then invoke the slide*******/
     $(window).load(() => {
         Utils.slide(6000)
-        // 轮播上下页按钮
+            // 轮播上下页按钮
         $('.prev').click(() => {
-            $('.carousel_group')
-                .animate({ marginLeft: '-1500px' }, 800, () => {
-                    $('.carousel_item:first').appendTo('.carousel_group');
-                    $('.carousel_group')
-                        .css({ marginLeft: 0 })
-                })
-        })
-        // .next
+                $('.carousel_group')
+                    .animate({ marginLeft: '-1500px' }, 800, () => {
+                        $('.carousel_item:first').appendTo('.carousel_group');
+                        $('.carousel_group')
+                            .css({ marginLeft: 0 })
+                    })
+            })
+            // .next
         $('.next').click(() => {
             $('.carousel_group').prepend($('.carousel_item:last'))
                 .css({ marginLeft: '-1500px' })
@@ -293,7 +295,7 @@
 
         $('.left').click(() => {
             moved--;
-            marginLeft = -(moved-1) * 1000 + 'px';
+            marginLeft = -(moved - 1) * 1000 + 'px';
             $('.lb_group ').animate({ marginLeft }, 800, () => {
                 if (moved == 2) {
                     $('.right').prop('disabled', false).removeClass('noHover')

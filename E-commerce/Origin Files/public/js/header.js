@@ -90,7 +90,17 @@
     })
 
     // header_logo_content event jump to index.html
-    $('.header_logo_content').click(function(){
-        $(this).attr({href:'http://localhost:3000/index.html'});
+    $('.header_logo_content').click(function() {
+        $(this).attr({ href: 'http://localhost:3000/index.html' });
+    })
+
+    // 购物车点击事件
+    $('.headerCart').click(() => {
+        var uid = sessionStorage.getItem('uid');
+        if (!uid) {
+            $('.log_container').removeClass('collapse');
+        } else {
+            $('.cartContainer').removeClass('collapse');
+        }
     })
 })()

@@ -18,6 +18,10 @@ header,
     bottom: 20px;
 }
 
+.collapse {
+    display: none;
+}
+
 .rcmd {
     right: 7px;
     top: 135px;
@@ -219,10 +223,6 @@ header,
     margin-left: 150px;
     padding-bottom: 5px;
     color: #BABABA;
-}
-
-.collapse {
-    display: none;
 }
 
 .fashion_link:hover,

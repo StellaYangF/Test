@@ -23,9 +23,9 @@
 
     /*******login verify*******/
     $(".login_frame")
-        .on("focus", ".user", function () { $(this).addClass("txt_focus").siblings('.msg').html(''); })
+        .on("focus", ".user", function() { $(this).addClass("txt_focus").siblings('.msg').html(''); })
         // function onfocus onblur
-        .on("blur", ".user", function () {
+        .on("blur", ".user", function() {
             $(this).removeClass("txt_focus")
                 .siblings('.msg').html('');
         })
@@ -33,8 +33,8 @@
         .on("click", ".btn.login", () => {
             var uname = $(".uname").val(),
                 upwd = $(".upwd").val(),
-                timer=null,
-                count=3;
+                timer = null,
+                count = 3;
             if (!uname) {
                 $('.uname.one').focus().siblings('.msg').html('用户名不能为空');
             } else {
@@ -59,15 +59,15 @@
                         } else {
                             sessionStorage.setItem('uid', result.data);
                             sessionStorage.setItem('uname', uname);
-                            timer=setInterval(()=>{
+                            timer = setInterval(() => {
                                 $('.resMsg').html(result.msg + `，${count}秒后跳转登购买页`);
                                 count--;
-                            },1000)
+                            }, 1000)
                             setTimeout(() => {
                                 clearInterval(timer);
                                 $('.log_container').addClass('collapse');
                             }, 4000)
-                            $('.u_info li').first().html(`欢迎` + uname )
+                            $('.u_info li').first().html(`欢迎` + uname)
                         }
                     })
                 }
@@ -76,7 +76,7 @@
 
     /*******register verify*******/
     $(".register_frame")
-        .on("focus", ".user", function () {
+        .on("focus", ".user", function() {
             var txt = $(this);
             txt.addClass('txt_focus').siblings('.msg').removeClass('vali_fail').removeClass('vali_success')
             if (txt.is('.uname')) { $('.msg.one').html('3-10个字符以内的字母、数字或下划线的组合') };
@@ -84,7 +84,7 @@
             if (txt.is('.tel')) { $('.msg.three').html('有效的联系方式') }
             if (txt.is('.upwd')) { $('.msg.four').html('6-16个字符以内的字母、数字或下划线的组合') }
         })
-        .on("blur", ".user", function () {
+        .on("blur", ".user", function() {
             $(this).removeClass("txt_focus").siblings('.msg').removeClass('vali_fail').removeClass('vali_success');
             var uname = $('.uname.two').val(),
                 email = $('.email').val(),
@@ -103,7 +103,7 @@
                         url: "http://localhost:3000/user/verifyUname",
                         type: "get",
                         data: { uname },
-                    }).then(function (res) {
+                    }).then(function(res) {
                         // verify database whether the uname exists
                         if (res.code == 1) {
                             $('.uname')
@@ -146,7 +146,7 @@
                 }
             };
         })
-        .on("click", ".reg.btn", function () {
+        .on("click", ".reg.btn", function() {
             var uname = $('.uname.two').val(),
                 email = $('.email').val(),
                 tel = $('.tel').val(),
@@ -166,7 +166,7 @@
                     url: "http://localhost:3000/user/verifyUname",
                     type: "get",
                     data: { uname },
-                }).then(function (res) {
+                }).then(function(res) {
                     // verify database whether the uname exists
                     if (res.code == 1) {
                         $('.uname').focus()
@@ -236,4 +236,5 @@
                 }
             })
         })
+
 })();

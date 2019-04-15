@@ -135,7 +135,8 @@
     </div>
     </div>
     <!-- footer import -->
-    <footer></footer>`);
+    <footer></footer>
+    <div class='cartContainer collapse'></div>`);
     $("body").prepend($elem);
 
     // database get list并封装函数多次调用
@@ -154,14 +155,14 @@
             $('.feature_container.two')
                 .html(html)
                 // list_item hover event
-                .on('mouseenter', 'img', function () {
+                .on('mouseenter', 'img', function() {
                     var alt = $(this).attr('alt');
                     if (alt < 21) {
                         var src = $(this).attr('data-imgBack');
                         $(this).attr({ src })
                     }
                 })
-                .on('mouseleave', 'img', function () {
+                .on('mouseleave', 'img', function() {
                     var src = $(this).attr('data-imgFront');
                     $(this).attr({ src })
                 });
@@ -171,10 +172,11 @@
     Utils.importHtml(EnvInfo.headerUrl, EnvInfo.headerHtml)
     Utils.importHtml(EnvInfo.footerUrl, EnvInfo.footerHtml)
     Utils.importHtml(EnvInfo.loginUrl, EnvInfo.loginHtml)
+    Utils.importHtml(EnvInfo.cartUrl, EnvInfo.cartHtml)
 
     /***** nav arrow event *****/
     $(".nav_content")
-        .on("mouseenter", 'li', function () {
+        .on("mouseenter", 'li', function() {
             $(this)
                 .css({
                     color: "#F9DEAA"
@@ -184,7 +186,7 @@
                     transform: "translate(5px)"
                 })
         })
-        .on("mouseleave", 'li', function () {
+        .on("mouseleave", 'li', function() {
             $(this)
                 .css({
                     color: "#fff"
@@ -196,7 +198,7 @@
         })
 
     /***** sort css setting*****/
-    $("select").on("hover", "option", function () {
+    $("select").on("hover", "option", function() {
         $(this).css({
             color: "#EA9191",
             background: "#fff"
@@ -204,7 +206,7 @@
     })
 
     // home_link
-    $('.home_link').click(function () {
+    $('.home_link').click(function() {
         $(this).attr({
             href: 'http://localhost:3000/products.html'
         });
@@ -221,7 +223,7 @@
             // 默认第一页选中
             .next('button').addClass('selected');
         // 按钮点击事件
-        $('.btn_page').on('click', 'button', function () {
+        $('.btn_page').on('click', 'button', function() {
             var btn = $(this);
             // 点击下一页pno++,，并调用页面更新
             if (btn.is('.next')) {
@@ -261,27 +263,27 @@
                     pno = 1;
                     $('.pageOne').addClass('selected').siblings().removeClass('selected');
                     getList();
-                    $('.next').prop('disabled',false);
-                    $('.prev').prop('disabled',true)
+                    $('.next').prop('disabled', false);
+                    $('.prev').prop('disabled', true)
                 }
             }
             // 点击页面2
-            if(btn.is('.pageTwo')){
+            if (btn.is('.pageTwo')) {
                 if (pno != 2) {
                     pno = 2;
                     $('.pageTwo').addClass('selected').siblings().removeClass('selected');
                     getList(pno);
-                    $('.next').prop('disabled',false)
+                    $('.next').prop('disabled', false)
                 }
-            }            
+            }
             // 点击页面3
-            if(btn.is('.pageThree')){
+            if (btn.is('.pageThree')) {
                 if (pno != 3) {
                     pno = 3;
                     $('.pageThree').addClass('selected').siblings().removeClass('selected');
                     getList(pno);
-                    $('.next').prop('disabled',true);
-                    $('.prev').prop('disabled',false)
+                    $('.next').prop('disabled', true);
+                    $('.prev').prop('disabled', false)
                 }
             }
         })

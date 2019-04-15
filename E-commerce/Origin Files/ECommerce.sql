@@ -318,3 +318,4 @@ INSERT INTO e_product_pic(pid,product_id,sm,md,lg) VALUES (NULL,1,'img/fashion/f
 (NULL,29,'img/fashion/fashion_details/sm_29_1.jpg','img/fashion/fashion_details/md_29_1.jpg','img/fashion/fashion_details/lg_29_1.jpg'),
 (NULL,30,'img/fashion/fashion_details/sm_30_1.jpg','img/fashion/fashion_details/md_30_1.jpg','img/fashion/fashion_details/lg_30_1.jpg'),
 (NULL,31,'img/fashion/fashion_details/sm_31_1.jpg','img/fashion/fashion_details/md_31_1.jpg','img/fashion/fashion_details/lg_31_1.jpg');
+

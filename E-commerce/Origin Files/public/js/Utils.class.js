@@ -1,5 +1,5 @@
 class Utils {
-    constructor() { }
+    constructor() {}
 
     static importHtml(url, html) {
         $.ajax({
@@ -35,7 +35,7 @@ class Utils {
         });
 
         setInterval(() => {
-            $(".carousel_group").animate({ marginLeft:'-1500px' }, 800, () => {
+            $(".carousel_group").animate({ marginLeft: '-1500px' }, 800, () => {
                 $('.carousel_item:first').appendTo('.carousel_group');
                 $('.carousel_group')
                     .css({ marginLeft: 0 })
@@ -47,13 +47,14 @@ class Utils {
 
 
 class EnvInfo {
-    constructor() { }
+    constructor() {}
 }
 EnvInfo.headerUrl = "header.html";
 EnvInfo.footerUrl = "footer.html";
 EnvInfo.loginUrl = "login.html";
+EnvInfo.cartUrl = "cart.html";
 EnvInfo.headerHtml = "header";
 EnvInfo.footerHtml = "footer";
 EnvInfo.loginHtml = ".log_container";
-EnvInfo.loginFrame = $('.login_frame')
-
+EnvInfo.cartHtml = ".cartContainer";
+EnvInfo.loginFrame = $('.login_frame');
