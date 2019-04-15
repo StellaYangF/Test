@@ -12,7 +12,7 @@ router.post("/login", (req, res) => {
         if (result.length > 0) {
             var uid = result[0].uid;
             req.session.uid = uid;
-            res.send({ code: 1, msg: "登录成功", data: uid })
+            res.send({ code: 1, msg: "登录成功", data: uid });
         } else {
             res.send({ code: -1, msg: "用户名/密码有误" })
         }

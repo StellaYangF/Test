@@ -319,3 +319,16 @@ INSERT INTO e_product_pic(pid,product_id,sm,md,lg) VALUES (NULL,1,'img/fashion/f
 (NULL,30,'img/fashion/fashion_details/sm_30_1.jpg','img/fashion/fashion_details/md_30_1.jpg','img/fashion/fashion_details/lg_30_1.jpg'),
 (NULL,31,'img/fashion/fashion_details/sm_31_1.jpg','img/fashion/fashion_details/md_31_1.jpg','img/fashion/fashion_details/lg_31_1.jpg');
 
+#创建购物车
+CREATE TABLE e_cart(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  uid INT,
+  pid INT,
+  price DECIMAL(10,2),
+  pname VARCHAR(255),
+  count INT
+);
+
+#插入一条数据
+INSERT INTO e_cart (id,uid,pid,price,pname,count) VALUES (NULL,11,7,279.99,"Zara CROPPED SHIRT",1);
+

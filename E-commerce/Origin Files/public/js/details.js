@@ -174,7 +174,10 @@
     $("body").prepend($elem);
 
     // get url params 
-    var pid = window.location.search.split('=')[1];
+    var pid = window.location.search.split('=')[1],
+        Ppname = '',
+        Pprice = 0,
+        num = 0;
     //according to url.params to show the product details
     $.ajax({
         url: 'http://localhost:3000/product/details',
@@ -186,11 +189,13 @@
             productList = result.data,
             imgList = '',
             backgroundImage = `url(${productList[0].lg})`,
-            imgMd = `<img src=${productList[0].lg} alt=${productList[0].pid}></img>`,
-            prdtDetails = `<li>參考 <span class="rfc">00113</span></li>
-            <li class="title">${productList[0].pname}</li>
+            imgMd = `<img src=${productList[0].lg} alt=${productList[0].pid}></img>`;
+        Ppname = productList[0].pname;
+        Pprice = productList[0].price;
+        var prdtDetails = `<li>參考 <span class="rfc">00113</span></li>
+            <li class="title">${Ppname}</li>
             <li class="stock">有现货</li>
-            <li class="price">¥${productList[0].price.toFixed(2)}</li>
+            <li class="price">¥${Pprice.toFixed(2)}</li>
             <li class="sz">
                 <span>尺寸</span>
                 <span class="mui-icon mui-icon-arrowdown"></span>
@@ -252,11 +257,11 @@
         };
         $('.feature_container.two').html(html)
             // list_item hover event
-            .on('mouseenter', 'img', function() {
+            .on('mouseenter', 'img', function () {
                 var src = $(this).attr('data-imgBack');
                 $(this).attr({ src })
             })
-            .on('mouseleave', 'img', function() {
+            .on('mouseleave', 'img', function () {
                 var src = $(this).attr('data-imgFront');
                 $(this).attr({ src })
             });
@@ -270,11 +275,11 @@
 
     //  products event 
     $(".prod_info")
-        .on("click", ".info", function() {
+        .on("click", ".info", function () {
             $(this).css({
-                    borderBottom: "2px solid rgb(203,170,149)",
-                    color: "#2F2C2F"
-                })
+                borderBottom: "2px solid rgb(203,170,149)",
+                color: "#2F2C2F"
+            })
                 .siblings().css({
                     color: "#BAB3B3",
                     borderBottom: "none"
@@ -297,21 +302,21 @@
     // add/minus product btn event
     $(window).load(() => {
         //var canClick = false,
-        var num = $('.countNum').val();
+        num = $('.countNum').val();
         $('.mui-icon-arrowup.plus').click(() => {
             num++;
             $('.countNum').val(num);
             $('.mui-icon-arrowdown.minus').removeClass('vali_grey')
         })
-        $('.mui-icon-arrowdown.minus').click(function() {
-                if (num > 1) { num--; }
-                $('.countNum').val(num);
-                if (num == 1) {
-                    $(this).addClass('vali_grey')
-                }
-            })
-            // small image click event
-        $('.img_group').on('click', 'img', function() {
+        $('.mui-icon-arrowdown.minus').click(function () {
+            if (num > 1) { num--; }
+            $('.countNum').val(num);
+            if (num == 1) {
+                $(this).addClass('vali_grey')
+            }
+        })
+        // small image click event
+        $('.img_group').on('click', 'img', function () {
             var src = $(this).attr('data-lg'),
                 backgroundImage = `url(${src})`;
             $('.pics_md img').attr({ src });
@@ -327,7 +332,7 @@
         if (len < 6) {
             $('.mui-icon-arrowdown.next').addClass('unClick')
         } else {
-            $('.mui-icon-arrowdown.next').click(function() {
+            $('.mui-icon-arrowdown.next').click(function () {
                 len - moved == 5 ? moved : moved++;
                 marginTop = -moved * step + 'px';
                 $('.img_group').css({ marginTop });
@@ -337,22 +342,40 @@
                 }
             })
         }
-        $('.mui-icon-arrowup.prev').click(function() {
+        $('.mui-icon-arrowup.prev').click(function () {
             if (!$(this).is('.unClick')) {
+                moved == 0 ? moved = 0 : moved--;
+                $('.mui-icon-arrowdown.next').removeClass('unClick');
                 if (moved == 0) {
                     $(this).addClass('unClick');
-                } else {
-                    moved--;
-                    $('.mui-icon-arrowdown.next').removeClass('unClick');
                 }
             }
             marginTop = -moved * step + 'px';
             $('.img_group').css({ marginTop });
         })
+
+        // // 加入购物车  btn_cart 
+        $('.btn_cart').click(() => {
+            if (!sessionStorage.getItem('uid')) {
+                $('.log_container').removeClass('collapse')
+            } else {
+                var uid = sessionStorage.getItem('uid');
+                $.ajax({
+                    url: "http://localhost:3000/cart/add",
+                    data: { pid, pname: Ppname, price: Pprice, buyCount: num, uid },
+                    type: 'post',
+                    success:(result)=>{
+                        console.log(result);
+                    }
+                })
+            }
+        })
     })
+
+    // 放大镜效果
     $('.zoomContainer').hover(() => {
         $('.mask').toggleClass('collapse');
-    }).mousemove(function(e) {
+    }).mousemove(function (e) {
         var left = e.offsetX - 150,
             top = e.offsetY - 150,
             backgroundPosition = `${-left * 1.5}px ${-top * 1.35}px`;
@@ -360,7 +383,7 @@
         $('.mask').css({ backgroundPosition })
     })
 
-    $('.home_link').click(function() {
+    $('.home_link').click(function () {
         $(this).attr({
             href: 'http://localhost:3000/products.html'
         })

@@ -109,3 +109,6 @@
     color: #fff;
     background: rgb(44, 47, 44)
 }
+.summary li .deleteAll,.summary li .sum{
+    margin:0px;
+}

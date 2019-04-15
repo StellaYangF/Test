@@ -43,6 +43,105 @@ class Utils {
         }, time)
     }
 
+    static getCart(){
+        $.ajax({
+            url: 'http://localhost:3000/cart/list',
+            data: { uid: sessionStorage.getItem('uid') },
+            type: 'get',
+            dataType: 'json'
+        }).then((result) => {
+            var html = '',
+                total = 0,
+                list = result.data;
+            if (!list) {
+                $('.productList').html('购物车空空如也，赶快添加商品~');
+            } else {
+                for (var item of list) {
+                    var pid = item.pid;
+                    total += (item.count * item.price);
+                    html += ` <li>
+                <input type="checkbox">
+                <img src="img/fashion/fashion_details/sm_${pid}_1.jpg" alt=${pid}>
+                <div class='productDetail'>
+                    <h5 class='pTitle'>Zara CHECK SHIRT</h5>
+                    <p>单价：
+                        <span class='pPrice'>¥${item.price.toFixed(2)}</span>
+                    </p>
+                    <p>数量：
+                        <span>${item.count}</span>
+                    </p>
+                    <p>金额：
+                        <span class='total'>¥${(item.count * item.price).toFixed(2)}</span>
+                    </p>
+                </div>
+                <span class='deleteOne'>×</span>
+                </li>`;
+                };
+                $('.productList').html(html);
+            }
+            html = `<li>
+            <span>
+                    <input type="checkbox">全选
+                    </span>
+            <span class="deleteAll">删除</span>
+            </li>
+            <li>
+            <span>总计</span>
+            <span class='sum'>${total.toFixed(2)}</span>
+            </li>`;
+            $('.summary').html(html);
+        })
+    }
+
+    static login(){
+                $.ajax({
+            url: 'http://localhost:3000/cart/list',
+            data: { uid: sessionStorage.getItem('uid') },
+            type: 'get',
+            dataType: 'json'
+        }).then((result) => {
+            var html = '',
+                total = 0,
+                list = result.data;
+            if (!list) {
+                $('.productList').html('购物车空空如也，赶快添加商品~');
+            } else {
+                for (var item of list) {
+                    var pid = item.pid;
+                    total += (item.count * item.price);
+                    html += ` <li>
+                <input type="checkbox">
+                <img src="img/fashion/fashion_details/sm_${pid}_1.jpg" alt=${pid}>
+                <div class='productDetail'>
+                    <h5 class='pTitle'>Zara CHECK SHIRT</h5>
+                    <p>单价：
+                        <span class='pPrice'>¥${item.price.toFixed(2)}</span>
+                    </p>
+                    <p>数量：
+                        <span>${item.count}</span>
+                    </p>
+                    <p>金额：
+                        <span class='total'>¥${(item.count * item.price).toFixed(2)}</span>
+                    </p>
+                </div>
+                <span class='deleteOne'>×</span>
+                </li>`;
+                };
+                $('.productList').html(html);
+            }
+            html = `<li>
+            <span>
+                    <input type="checkbox">全选
+                    </span>
+            <span class="deleteAll">删除</span>
+            </li>
+            <li>
+            <span>总计</span>
+            <span class='sum'>${total.toFixed(2)}</span>
+            </li>`;
+            $('.summary').html(html);
+        })
+    }
 }
 
 

@@ -5,6 +5,7 @@ const cors = require('cors');
 // import self defined modules
 const user = require('./routes/user.router.js');
 const product = require('./routes/product.router.js');
+const cart=require('./routes/cart.router.js');
 const session = require("express-session");
 
 // initialize server from express()
@@ -32,5 +33,7 @@ server.use(express.static('./public'));
 server.use(bodyParser.urlencoded({
     extended: false
 }));
+
 server.use('/user', user);
 server.use('/product', product);
+server.use('/cart',cart);
